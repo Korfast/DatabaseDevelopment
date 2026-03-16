@@ -1,0 +1,325 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36" version="29.6.2">
+  <diagram name="Страница-1" id="vihsmnF75nOKxgitPrHo">
+    <mxGraphModel dx="1678" dy="884" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=14;" value="&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;Приём и регистрация контента&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="160" width="160" x="320" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-2" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 14px; text-wrap-mode: nowrap; background-color: rgb(255, 255, 255);&quot;&gt;&lt;font face=&quot;Times New Roman&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;А1&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="20" width="20" x="450" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=14;" value="&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;Учёт лицензий&lt;/font&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="120" width="160" x="720" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-6" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 14px; text-wrap-mode: nowrap; background-color: rgb(255, 255, 255);&quot;&gt;&lt;font face=&quot;Times New Roman&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;А2&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="20" width="20" x="850" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=14;" value="&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;Подготовка к выгрузке&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="120" width="160" x="1080" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-8" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 14px; text-wrap-mode: nowrap; background-color: rgb(255, 255, 255);&quot;&gt;&lt;font face=&quot;Times New Roman&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;А3&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="20" width="20" x="1210" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-9" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;fontFamily=Times New Roman;fontSize=14;" target="ZP4ISAHUtAHRWuzI4mEM-1" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="40" y="280" as="sourcePoint" />
+            <mxPoint x="29" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-10" connectable="0" parent="ZP4ISAHUtAHRWuzI4mEM-9" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Times New Roman;fontSize=14;" value="&lt;font&gt;Медиа-материалы от студий&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.266" y="2" as="geometry">
+            <mxPoint x="17" y="-23" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-11" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Times New Roman;fontSize=14;" target="ZP4ISAHUtAHRWuzI4mEM-1" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="40" y="320" as="sourcePoint" />
+            <mxPoint x="30" y="303" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-12" connectable="0" parent="ZP4ISAHUtAHRWuzI4mEM-11" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Times New Roman;fontSize=14;" value="&lt;span style=&quot;line-height: 107%;&quot;&gt;&lt;font&gt;Договоры и&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;лицензионные соглашения&lt;/span&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.266" y="2" as="geometry">
+            <mxPoint x="22" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-13" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;fontFamily=Times New Roman;fontSize=14;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="ZP4ISAHUtAHRWuzI4mEM-1" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="80" y="160" />
+              <mxPoint x="360" y="160" />
+            </Array>
+            <mxPoint x="80" y="130" as="sourcePoint" />
+            <mxPoint x="110" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-14" connectable="0" parent="ZP4ISAHUtAHRWuzI4mEM-13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Times New Roman;fontSize=14;" value="Классификаторы" vertex="1">
+          <mxGeometry relative="1" x="-0.266" y="2" as="geometry">
+            <mxPoint x="-43" y="-18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-15" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;fontFamily=Times New Roman;fontSize=14;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="ZP4ISAHUtAHRWuzI4mEM-1" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="80" y="80" />
+              <mxPoint x="400" y="80" />
+            </Array>
+            <mxPoint x="80" y="60" as="sourcePoint" />
+            <mxPoint x="160" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-16" connectable="0" parent="ZP4ISAHUtAHRWuzI4mEM-15" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Times New Roman;fontSize=14;" value="Регламет обработки и учёта контента" vertex="1">
+          <mxGeometry relative="1" x="-0.1632" y="-2" as="geometry">
+            <mxPoint x="-48" y="-22" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-17" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" target="ZP4ISAHUtAHRWuzI4mEM-1" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="80" y="800" />
+              <mxPoint x="360" y="800" />
+            </Array>
+            <mxPoint x="80" y="820" as="sourcePoint" />
+            <mxPoint x="100" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-18" connectable="0" parent="ZP4ISAHUtAHRWuzI4mEM-17" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;font face=&quot;Times New Roman&quot; style=&quot;font-size: 14px;&quot;&gt;Сотрудники отдела&lt;/font&gt;&lt;div&gt;&lt;font face=&quot;Times New Roman&quot; style=&quot;font-size: 14px;&quot;&gt;контента (менеджеры)&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.5059" y="-2" as="geometry">
+            <mxPoint x="-73" y="-22" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-19" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" target="ZP4ISAHUtAHRWuzI4mEM-1" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="80" y="840" />
+              <mxPoint x="440" y="840" />
+            </Array>
+            <mxPoint x="80" y="860" as="sourcePoint" />
+            <mxPoint x="180" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-20" connectable="0" parent="ZP4ISAHUtAHRWuzI4mEM-19" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 14px;&quot;&gt;Сервер&lt;/span&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.5059" y="-2" as="geometry">
+            <mxPoint x="-143" y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-21" edge="1" parent="1" source="ZP4ISAHUtAHRWuzI4mEM-1" style="endArrow=classic;html=1;rounded=0;fontFamily=Times New Roman;fontSize=14;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" target="ZP4ISAHUtAHRWuzI4mEM-5" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="670" y="360" />
+              <mxPoint x="670" y="540" />
+            </Array>
+            <mxPoint x="240" y="360" as="sourcePoint" />
+            <mxPoint x="580" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-22" connectable="0" parent="ZP4ISAHUtAHRWuzI4mEM-21" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Times New Roman;fontSize=14;" value="&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;Журналы&amp;nbsp;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;поступления&lt;/span&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.266" y="2" as="geometry">
+            <mxPoint x="-73" y="-18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-23" edge="1" parent="1" source="ZP4ISAHUtAHRWuzI4mEM-1" style="endArrow=classic;html=1;rounded=0;fontFamily=Times New Roman;fontSize=14;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="ZP4ISAHUtAHRWuzI4mEM-7" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="280" />
+              <mxPoint x="1060" y="630" />
+            </Array>
+            <mxPoint x="270" y="160" as="sourcePoint" />
+            <mxPoint x="1130" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-24" connectable="0" parent="ZP4ISAHUtAHRWuzI4mEM-23" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Times New Roman;fontSize=14;" value="&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;&lt;font dir=&quot;auto&quot; style=&quot;vertical-align: inherit;&quot;&gt;Медиа-файлы,&amp;nbsp;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;разложенные по папкам&lt;/span&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.266" y="2" as="geometry">
+            <mxPoint x="-218" y="-24" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-25" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;fontFamily=Times New Roman;fontSize=14;" target="ZP4ISAHUtAHRWuzI4mEM-1" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="80" y="40" />
+              <mxPoint x="440" y="40" />
+            </Array>
+            <mxPoint x="80" y="20" as="sourcePoint" />
+            <mxPoint x="460" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-26" connectable="0" parent="ZP4ISAHUtAHRWuzI4mEM-25" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Times New Roman;fontSize=14;" value="Реестр лицензеонных ограничений" vertex="1">
+          <mxGeometry relative="1" x="-0.1632" y="-2" as="geometry">
+            <mxPoint x="-87" y="-22" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-29" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" target="ZP4ISAHUtAHRWuzI4mEM-5" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="760" y="800" />
+            </Array>
+            <mxPoint x="80" y="800" as="sourcePoint" />
+            <mxPoint x="690" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-30" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" target="ZP4ISAHUtAHRWuzI4mEM-5" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="840" y="840" />
+            </Array>
+            <mxPoint x="80" y="840" as="sourcePoint" />
+            <mxPoint x="1020" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-31" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" target="ZP4ISAHUtAHRWuzI4mEM-7" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="1120" y="800" />
+            </Array>
+            <mxPoint x="80" y="800" as="sourcePoint" />
+            <mxPoint x="1060" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-32" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" target="ZP4ISAHUtAHRWuzI4mEM-7" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="1200" y="840" />
+            </Array>
+            <mxPoint x="80" y="840" as="sourcePoint" />
+            <mxPoint x="1130" y="880" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-33" edge="1" parent="1" source="ZP4ISAHUtAHRWuzI4mEM-1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="ZP4ISAHUtAHRWuzI4mEM-5" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="320" />
+              <mxPoint x="700" y="510" />
+            </Array>
+            <mxPoint x="260" y="310" as="sourcePoint" />
+            <mxPoint x="750" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-34" connectable="0" parent="ZP4ISAHUtAHRWuzI4mEM-33" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;font dir=&quot;auto&quot; style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 14px; vertical-align: inherit;&quot;&gt;Зарегестрированные договоры&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.5396" y="2" as="geometry">
+            <mxPoint x="8" y="-18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-37" edge="1" parent="1" source="ZP4ISAHUtAHRWuzI4mEM-1" style="endArrow=classic;html=1;rounded=0;fontFamily=Times New Roman;fontSize=14;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=1.002;exitY=0.935;exitDx=0;exitDy=0;exitPerimeter=0;" target="ZP4ISAHUtAHRWuzI4mEM-5" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="390" />
+              <mxPoint x="640" y="570" />
+            </Array>
+            <mxPoint x="490" y="400" as="sourcePoint" />
+            <mxPoint x="40" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-38" connectable="0" parent="ZP4ISAHUtAHRWuzI4mEM-37" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Times New Roman;fontSize=14;" value="Метаданные контента" vertex="1">
+          <mxGeometry relative="1" x="-0.266" y="2" as="geometry">
+            <mxPoint x="-74" y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-40" edge="1" parent="1" source="ZP4ISAHUtAHRWuzI4mEM-5" style="endArrow=classic;html=1;rounded=0;fontFamily=Times New Roman;fontSize=14;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="961" y="560" as="sourcePoint" />
+            <mxPoint x="1440" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-41" connectable="0" parent="ZP4ISAHUtAHRWuzI4mEM-40" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Times New Roman;fontSize=14;" value="Сигналы об истечении лицензий" vertex="1">
+          <mxGeometry relative="1" x="-0.266" y="2" as="geometry">
+            <mxPoint x="235" y="-18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-42" edge="1" parent="1" source="ZP4ISAHUtAHRWuzI4mEM-5" style="endArrow=classic;html=1;rounded=0;fontFamily=Times New Roman;fontSize=14;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="ZP4ISAHUtAHRWuzI4mEM-7" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="900" y="570" />
+              <mxPoint x="900" y="660" />
+            </Array>
+            <mxPoint x="910" y="570" as="sourcePoint" />
+            <mxPoint x="1150" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-43" connectable="0" parent="ZP4ISAHUtAHRWuzI4mEM-42" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Times New Roman;fontSize=14;" value="Данные лицензий с&lt;div&gt;привязками к контенту&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.266" y="2" as="geometry">
+            <mxPoint x="78" y="-27" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-44" edge="1" parent="1" source="ZP4ISAHUtAHRWuzI4mEM-7" style="endArrow=classic;html=1;rounded=0;fontFamily=Times New Roman;fontSize=14;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1260" y="630" as="sourcePoint" />
+            <mxPoint x="1440" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-45" connectable="0" parent="ZP4ISAHUtAHRWuzI4mEM-44" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Times New Roman;fontSize=14;" value="Отчёты по&amp;nbsp;&lt;div&gt;проделанной деятельности&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.266" y="2" as="geometry">
+            <mxPoint x="16" y="-18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-46" edge="1" parent="1" source="ZP4ISAHUtAHRWuzI4mEM-7" style="endArrow=classic;html=1;rounded=0;fontFamily=Times New Roman;fontSize=14;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1254" y="690" as="sourcePoint" />
+            <mxPoint x="1440" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-47" connectable="0" parent="ZP4ISAHUtAHRWuzI4mEM-46" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Times New Roman;fontSize=14;" value="Информация для публикации" vertex="1">
+          <mxGeometry relative="1" x="-0.266" y="2" as="geometry">
+            <mxPoint x="16" y="-18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-48" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;fontFamily=Times New Roman;fontSize=14;" target="ZP4ISAHUtAHRWuzI4mEM-7" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="30" y="690" as="sourcePoint" />
+            <mxPoint x="98" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-49" connectable="0" parent="ZP4ISAHUtAHRWuzI4mEM-48" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Times New Roman;fontSize=14;" value="&lt;span style=&quot;line-height: 107%;&quot;&gt;&lt;font&gt;Заявки от отдела&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;маркетинга на публикацию&lt;/span&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.266" y="2" as="geometry">
+            <mxPoint x="-242" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-52" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="ZP4ISAHUtAHRWuzI4mEM-5" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="760" y="160" />
+            </Array>
+            <mxPoint x="80" y="160" as="sourcePoint" />
+            <mxPoint x="730" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-53" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="ZP4ISAHUtAHRWuzI4mEM-5" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="800" y="80" />
+            </Array>
+            <mxPoint x="80" y="80" as="sourcePoint" />
+            <mxPoint x="760" y="60" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-54" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="ZP4ISAHUtAHRWuzI4mEM-7" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="1120" y="80" />
+            </Array>
+            <mxPoint x="80" y="80" as="sourcePoint" />
+            <mxPoint x="1060" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-55" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="ZP4ISAHUtAHRWuzI4mEM-7" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="1160" y="40" />
+            </Array>
+            <mxPoint x="80" y="40" as="sourcePoint" />
+            <mxPoint x="1300" y="70" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZP4ISAHUtAHRWuzI4mEM-56" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="ZP4ISAHUtAHRWuzI4mEM-5" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="840" y="40" />
+            </Array>
+            <mxPoint x="80" y="40" as="sourcePoint" />
+            <mxPoint x="570" y="20" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
