@@ -65,9 +65,7 @@ namespace VideoHostingApp
         /// <param name="e">Аргументы события.</param>
         private void ContentToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // TODO: после создания ContentListForm раскомментировать:
             ContentListForm.Instance.ShowForm();
-            // MessageBox.Show("Форма Контент будет открыта позже.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         /// <summary>
@@ -78,9 +76,7 @@ namespace VideoHostingApp
         /// <param name="e">Аргументы события.</param>
         private void RightHoldersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // TODO: после создания RightHolderListForm
-            // RightHolderListForm.Instance.ShowForm();
-            MessageBox.Show("Форма Правообладатели будет открыта позже.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            RightHolderListForm.Instance.ShowForm();
         }
 
         /// <summary>
@@ -91,9 +87,7 @@ namespace VideoHostingApp
         /// <param name="e">Аргументы события.</param>
         private void GenresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // TODO: после создания GenreListForm
-            // GenreListForm.Instance.ShowForm();
-            MessageBox.Show("Форма Жанры будет открыта позже.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            GenreListForm.Instance.ShowForm();
         }
 
         /// <summary>
@@ -104,9 +98,7 @@ namespace VideoHostingApp
         /// <param name="e">Аргументы события.</param>
         private void LicensesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // TODO: после создания LicenseListForm
-            // LicenseListForm.Instance.ShowForm();
-            MessageBox.Show("Форма Лицензии будет открыта позже.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            LicenseListForm.Instance.ShowForm();
         }
 
         /// <summary>
@@ -117,9 +109,8 @@ namespace VideoHostingApp
         /// <param name="e">Аргументы события.</param>
         private void ContractsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // TODO: после создания ContractListForm
-            // ContractListForm.Instance.ShowForm();
-            MessageBox.Show("Форма Договоры будет открыта позже.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ContractListForm.Instance.ShowForm();
+            
         }
 
         /// <summary>
@@ -130,9 +121,9 @@ namespace VideoHostingApp
         /// <param name="e">Аргументы события.</param>
         private void MediaFilesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // TODO: после создания MediaFileListForm
-            // MediaFileListForm.Instance.ShowForm();
-            MessageBox.Show("Форма Медиафайлы будет открыта позже.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // MediaFileForm.Instance.ShowForm();
+            // ИЛИ
+            MediaFileListForm.Instance.ShowForm();
         }
 
         #endregion

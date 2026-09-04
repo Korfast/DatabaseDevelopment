@@ -34,7 +34,7 @@
             System.Windows.Forms.Label originalTitleLabel;
             System.Windows.Forms.Label releaseYearLabel;
             System.Windows.Forms.Label countryLabel;
-            System.Windows.Forms.Label режиссёрLabel;
+            System.Windows.Forms.Label directorLabel;
             System.Windows.Forms.Label descriptionLabel;
             System.Windows.Forms.Label ageRatingLabel;
             System.Windows.Forms.Label contentTypeLabel;
@@ -58,7 +58,7 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.контентBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.contentBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.contentIdTextBox = new System.Windows.Forms.TextBox();
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.originalTitleTextBox = new System.Windows.Forms.TextBox();
@@ -78,7 +78,7 @@
             originalTitleLabel = new System.Windows.Forms.Label();
             releaseYearLabel = new System.Windows.Forms.Label();
             countryLabel = new System.Windows.Forms.Label();
-            режиссёрLabel = new System.Windows.Forms.Label();
+            directorLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
             ageRatingLabel = new System.Windows.Forms.Label();
             contentTypeLabel = new System.Windows.Forms.Label();
@@ -137,14 +137,14 @@
             countryLabel.TabIndex = 9;
             countryLabel.Text = "страна производства:";
             // 
-            // режиссёрLabel
+            // directorLabel
             // 
-            режиссёрLabel.AutoSize = true;
-            режиссёрLabel.Location = new System.Drawing.Point(12, 165);
-            режиссёрLabel.Name = "режиссёрLabel";
-            режиссёрLabel.Size = new System.Drawing.Size(60, 13);
-            режиссёрLabel.TabIndex = 11;
-            режиссёрLabel.Text = "режиссёр:";
+            directorLabel.AutoSize = true;
+            directorLabel.Location = new System.Drawing.Point(12, 165);
+            directorLabel.Name = "directorLabel";
+            directorLabel.Size = new System.Drawing.Size(60, 13);
+            directorLabel.TabIndex = 11;
+            directorLabel.Text = "режиссёр:";
             // 
             // descriptionLabel
             // 
@@ -244,7 +244,7 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.контентBindingNavigatorSaveItem});
+            this.contentBindingNavigatorSaveItem});
             this.contentBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.contentBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.contentBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -343,14 +343,14 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // контентBindingNavigatorSaveItem
+            // contentBindingNavigatorSaveItem
             // 
-            this.контентBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.контентBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("контентBindingNavigatorSaveItem.Image")));
-            this.контентBindingNavigatorSaveItem.Name = "контентBindingNavigatorSaveItem";
-            this.контентBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.контентBindingNavigatorSaveItem.Text = "Сохранить данные";
-            this.контентBindingNavigatorSaveItem.Click += new System.EventHandler(this.ContentBindingNavigatorSaveItem_Click);
+            this.contentBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.contentBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("contentBindingNavigatorSaveItem.Image")));
+            this.contentBindingNavigatorSaveItem.Name = "contentBindingNavigatorSaveItem";
+            this.contentBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.contentBindingNavigatorSaveItem.Text = "Сохранить данные";
+            this.contentBindingNavigatorSaveItem.Click += new System.EventHandler(this.ContentBindingNavigatorSaveItem_Click);
             // 
             // contentIdTextBox
             // 
@@ -493,7 +493,7 @@
             this.Controls.Add(this.releaseYearTextBox);
             this.Controls.Add(countryLabel);
             this.Controls.Add(this.countryTextBox);
-            this.Controls.Add(режиссёрLabel);
+            this.Controls.Add(directorLabel);
             this.Controls.Add(this.directorTextBox);
             this.Controls.Add(descriptionLabel);
             this.Controls.Add(this.descriptionTextBox);
@@ -538,7 +538,7 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton контентBindingNavigatorSaveItem;
+        private System.Windows.Forms.ToolStripButton contentBindingNavigatorSaveItem;
         private System.Windows.Forms.TextBox contentIdTextBox;
         private System.Windows.Forms.TextBox titleTextBox;
         private System.Windows.Forms.TextBox originalTitleTextBox;
