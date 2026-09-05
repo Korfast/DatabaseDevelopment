@@ -19,7 +19,7 @@ namespace VideoHostingApp
     {
         #region Singleton
 
-        private static ContentListForm instance;
+        private static ContentListForm _instance;
 
         /// <summary>
         /// Возвращает единственный экземпляр формы.
@@ -29,9 +29,9 @@ namespace VideoHostingApp
         {
             get
             {
-                if (instance == null || instance.IsDisposed)
-                    instance = new ContentListForm();
-                return instance;
+                if (_instance == null || _instance.IsDisposed)
+                    _instance = new ContentListForm();
+                return _instance;
             }
         }
 
@@ -97,14 +97,24 @@ namespace VideoHostingApp
         /// Обработчик нажатия кнопки "Сохранить" в BindingNavigator.
         /// Выполняет проверку введённых данных, завершает редактирование
         /// и сохраняет все изменения в базу данных.
+        /// При возникновении ошибки (например, нарушение CHECK-ограничения)
+        /// показывает информативное сообщение пользователю.
         /// </summary>
         /// <param name="sender">Источник события.</param>
         /// <param name="e">Аргументы события.</param>
         private void ContentBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.contentBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.videoHostingDBDataSet);
+            try
+            {
+                this.Validate();
+                this.contentBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.videoHostingDBDataSet);
+                MessageBox.Show("Данные успешно сохранены.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при сохранении данных:\n" + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #endregion

@@ -19,7 +19,7 @@ namespace VideoHostingApp
     {
         #region Singleton
 
-        private static LicenseListForm instance;
+        private static LicenseListForm _instance;
 
         /// <summary>
         /// Возвращает единственный экземпляр формы.
@@ -29,9 +29,9 @@ namespace VideoHostingApp
         {
             get
             {
-                if (instance == null || instance.IsDisposed)
-                    instance = new LicenseListForm();
-                return instance;
+                if (_instance == null || _instance.IsDisposed)
+                    _instance = new LicenseListForm();
+                return _instance;
             }
         }
 
@@ -105,8 +105,7 @@ namespace VideoHostingApp
         private void LicenseDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             e.ThrowException = false;
-            MessageBox.Show("Ошибка в данных. Проверьте правильность заполнения полей.",
-                            "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            GridErrorHelper.ShowComboBoxError("Ошибка в данных. Проверьте правильность заполнения полей.");
         }
 
         #endregion

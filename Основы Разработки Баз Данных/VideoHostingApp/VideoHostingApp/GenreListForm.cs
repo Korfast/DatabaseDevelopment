@@ -18,7 +18,7 @@ namespace VideoHostingApp
     {
         #region Singleton
 
-        private static GenreListForm instance;
+        private static GenreListForm _instance;
 
         /// <summary>
         /// Возвращает единственный экземпляр формы.
@@ -28,9 +28,9 @@ namespace VideoHostingApp
         {
             get
             {
-                if (instance == null || instance.IsDisposed)
-                    instance = new GenreListForm();
-                return instance;
+                if (_instance == null || _instance.IsDisposed)
+                    _instance = new GenreListForm();
+                return _instance;
             }
         }
 

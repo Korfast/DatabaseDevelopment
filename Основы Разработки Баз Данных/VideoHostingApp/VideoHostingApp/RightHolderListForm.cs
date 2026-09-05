@@ -19,7 +19,7 @@ namespace VideoHostingApp
     {
         #region Singleton
 
-        private static RightHolderListForm instance;
+        private static RightHolderListForm _instance;
 
         /// <summary>
         /// Возвращает единственный экземпляр формы.
@@ -29,9 +29,9 @@ namespace VideoHostingApp
         {
             get
             {
-                if (instance == null || instance.IsDisposed)
-                    instance = new RightHolderListForm();
-                return instance;
+                if (_instance == null || _instance.IsDisposed)
+                    _instance = new RightHolderListForm();
+                return _instance;
             }
         }
 

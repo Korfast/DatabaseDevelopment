@@ -62,6 +62,7 @@
     <Compile Include="GenreListForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GridErrorHelper.cs" />
     <Compile Include="GenreListForm.Designer.cs">
       <DependentUpon>GenreListForm.cs</DependentUpon>
     </Compile>
@@ -76,12 +77,6 @@
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MediaFileForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MediaFileForm.Designer.cs">
-      <DependentUpon>MediaFileForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MediaFileListForm.cs">
       <SubType>Form</SubType>
@@ -119,9 +114,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MediaFileForm.resx">
-      <DependentUpon>MediaFileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MediaFileListForm.resx">
       <DependentUpon>MediaFileListForm.cs</DependentUpon>

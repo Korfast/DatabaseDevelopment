@@ -121,8 +121,6 @@ namespace VideoHostingApp
         /// <param name="e">Аргументы события.</param>
         private void MediaFilesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // MediaFileForm.Instance.ShowForm();
-            // ИЛИ
             MediaFileListForm.Instance.ShowForm();
         }
 
