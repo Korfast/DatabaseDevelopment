@@ -47,6 +47,11 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.rightHolderBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparatorFind = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripTextBoxFind = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButtonFind = new System.Windows.Forms.ToolStripButton();
+            this.checkBoxFind = new System.Windows.Forms.CheckBox();
+            this.toolStripControlHostFind = new System.Windows.Forms.ToolStripControlHost(this.checkBoxFind);
             this.rightHolderDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,7 +110,11 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.rightHolderBindingNavigatorSaveItem});
+            this.rightHolderBindingNavigatorSaveItem,
+            this.toolStripSeparatorFind,
+            this.toolStripTextBoxFind,
+            this.toolStripButtonFind,
+            this.toolStripControlHostFind});
             this.rightHolderBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.rightHolderBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.rightHolderBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -211,7 +220,39 @@
             this.rightHolderBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.rightHolderBindingNavigatorSaveItem.Text = "Сохранить данные";
             this.rightHolderBindingNavigatorSaveItem.Click += new System.EventHandler(this.RightHolderBindingNavigatorSaveItem_Click);
-            // 
+            //
+            // toolStripSeparatorFind
+            //
+            this.toolStripSeparatorFind.Name = "toolStripSeparatorFind";
+            this.toolStripSeparatorFind.Size = new System.Drawing.Size(6, 25);
+            //
+            // toolStripTextBoxFind
+            //
+            this.toolStripTextBoxFind.Name = "toolStripTextBoxFind";
+            this.toolStripTextBoxFind.Size = new System.Drawing.Size(120, 23);
+            this.toolStripTextBoxFind.ToolTipText = "Значение для поиска/фильтра по выбранной колонке грида";
+            //
+            // toolStripButtonFind
+            //
+            this.toolStripButtonFind.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.ImageAndText;
+            this.toolStripButtonFind.Name = "toolStripButtonFind";
+            this.toolStripButtonFind.Size = new System.Drawing.Size(50, 22);
+            this.toolStripButtonFind.Text = "Поиск";
+            this.toolStripButtonFind.ToolTipText = "Найти запись по значению в выбранной колонке";
+            this.toolStripButtonFind.Click += new System.EventHandler(this.ToolStripButtonFind_Click);
+            //
+            // checkBoxFind
+            //
+            this.checkBoxFind.AutoSize = true;
+            this.checkBoxFind.Text = "Фильтр";
+            this.checkBoxFind.CheckedChanged += new System.EventHandler(this.CheckBoxFind_CheckedChanged);
+            //
+            // toolStripControlHostFind
+            //
+            this.toolStripControlHostFind.Name = "toolStripControlHostFind";
+            this.toolStripControlHostFind.Size = new System.Drawing.Size(60, 23);
+            this.toolStripControlHostFind.ToolTipText = "Показывать только записи, совпадающие со значением поиска";
+            //
             // rightHolderDataGridView
             // 
             this.rightHolderDataGridView.AutoGenerateColumns = false;
@@ -369,6 +410,11 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton rightHolderBindingNavigatorSaveItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparatorFind;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBoxFind;
+        private System.Windows.Forms.ToolStripButton toolStripButtonFind;
+        private System.Windows.Forms.CheckBox checkBoxFind;
+        private System.Windows.Forms.ToolStripControlHost toolStripControlHostFind;
         private System.Windows.Forms.DataGridView rightHolderDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;

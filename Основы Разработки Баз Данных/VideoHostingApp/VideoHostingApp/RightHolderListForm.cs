@@ -101,5 +101,80 @@ namespace VideoHostingApp
         }
 
         #endregion
+
+        #region Поиск и фильтрация
+
+        /// <summary>
+        /// Возвращает имя поля БД, соответствующее колонке, на которой сейчас стоит курсор в гриде.
+        /// </summary>
+        private string GetSelectedFieldName()
+        {
+            return rightHolderDataGridView.Columns[rightHolderDataGridView.CurrentCell.ColumnIndex].DataPropertyName;
+        }
+
+        /// <summary>
+        /// Обработчик кнопки "Поиск". Ищет первую запись, у которой значение выбранной
+        /// колонки совпадает со значением, введённым в toolStripTextBoxFind.
+        /// </summary>
+        private void ToolStripButtonFind_Click(object sender, EventArgs e)
+        {
+            if (toolStripTextBoxFind.Text == "")
+            {
+                MessageBox.Show("Вы ничего не задали", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            int indexPos;
+            try
+            {
+                indexPos = rightHolderBindingSource.Find(GetSelectedFieldName(), toolStripTextBoxFind.Text);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Ошибка поиска \n" + err.Message);
+                return;
+            }
+
+            if (indexPos > -1)
+                rightHolderBindingSource.Position = indexPos;
+            else
+            {
+                MessageBox.Show("Таких правообладателей нет", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                rightHolderBindingSource.Position = 0;
+            }
+        }
+
+        /// <summary>
+        /// Обработчик флажка "Фильтр". Включает/выключает фильтрацию грида
+        /// по значению выбранной колонки через BindingSource.Filter.
+        /// </summary>
+        private void CheckBoxFind_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxFind.Checked)
+            {
+                if (toolStripTextBoxFind.Text == "")
+                {
+                    MessageBox.Show("Вы ничего не задали", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    try
+                    {
+                        rightHolderBindingSource.Filter = GetSelectedFieldName() + "='" + toolStripTextBoxFind.Text + "'";
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show("Ошибка фильтрации \n" + err.Message);
+                    }
+                }
+            }
+            else
+                rightHolderBindingSource.Filter = "";
+
+            if (rightHolderBindingSource.Count == 0)
+                MessageBox.Show("Нет таких");
+        }
+
+        #endregion
     }
 }

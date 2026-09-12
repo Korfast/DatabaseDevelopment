@@ -39,6 +39,9 @@
             this.licensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contractsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mediaFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contractDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contentDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
@@ -48,6 +51,7 @@
             this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.referencesToolStripMenuItem,
+            this.relationsToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
@@ -132,7 +136,30 @@
             this.mediaFilesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mediaFilesToolStripMenuItem.Text = "Медиафайлы";
             this.mediaFilesToolStripMenuItem.Click += new System.EventHandler(this.MediaFilesToolStripMenuItem_Click);
-            // 
+            //
+            // relationsToolStripMenuItem
+            //
+            this.relationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contractDetailsToolStripMenuItem,
+            this.contentDetailsToolStripMenuItem});
+            this.relationsToolStripMenuItem.Name = "relationsToolStripMenuItem";
+            this.relationsToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.relationsToolStripMenuItem.Text = "Связи";
+            //
+            // contractDetailsToolStripMenuItem
+            //
+            this.contractDetailsToolStripMenuItem.Name = "contractDetailsToolStripMenuItem";
+            this.contractDetailsToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.contractDetailsToolStripMenuItem.Text = "Договор и лицензии (1:М)";
+            this.contractDetailsToolStripMenuItem.Click += new System.EventHandler(this.ContractDetailsToolStripMenuItem_Click);
+            //
+            // contentDetailsToolStripMenuItem
+            //
+            this.contentDetailsToolStripMenuItem.Name = "contentDetailsToolStripMenuItem";
+            this.contentDetailsToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.contentDetailsToolStripMenuItem.Text = "Контент, жанры, файлы (М:М)";
+            this.contentDetailsToolStripMenuItem.Click += new System.EventHandler(this.ContentDetailsToolStripMenuItem_Click);
+            //
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
@@ -168,6 +195,9 @@
         private System.Windows.Forms.ToolStripMenuItem licensesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contractsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mediaFilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem relationsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contractDetailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contentDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }

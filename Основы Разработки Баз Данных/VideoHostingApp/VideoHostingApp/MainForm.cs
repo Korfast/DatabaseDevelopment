@@ -124,6 +124,29 @@ namespace VideoHostingApp
             MediaFileListForm.Instance.ShowForm();
         }
 
+        /// <summary>
+        /// Обработчик нажатия пункта меню «Договор и лицензии».
+        /// Открывает форму работы с договором и его лицензиями (связь 1:М).
+        /// </summary>
+        /// <param name="sender">Источник события.</param>
+        /// <param name="e">Аргументы события.</param>
+        private void ContractDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ContractDetailsForm.Instance.ShowForm();
+        }
+
+        /// <summary>
+        /// Обработчик нажатия пункта меню «Контент, жанры, файлы».
+        /// Открывает форму работы с контентом, его жанрами (связь М:М через
+        /// Контент_Жанр) и медиафайлами (связь 1:М).
+        /// </summary>
+        /// <param name="sender">Источник события.</param>
+        /// <param name="e">Аргументы события.</param>
+        private void ContentDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ContentDetailsForm.Instance.ShowForm();
+        }
+
         #endregion
 
         #region Обработчики кнопок панели инструментов
