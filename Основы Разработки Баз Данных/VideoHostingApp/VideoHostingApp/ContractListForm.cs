@@ -71,6 +71,7 @@ namespace VideoHostingApp
         private void ContractListForm_Load(object sender, EventArgs e)
         {
             this.contractTableAdapter.Fill(this.videoHostingDBDataSet.Договор);
+            AddExistingTerritoriesToComboBoxItems();
         }
 
         #endregion
@@ -90,6 +91,7 @@ namespace VideoHostingApp
             {
                 this.Validate();
                 this.contractBindingSource.EndEdit();
+                EnsureContractTerritoriesAreValid();
                 this.tableAdapterManager.UpdateAll(this.videoHostingDBDataSet);
                 MessageBox.Show("Данные сохранены.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -108,10 +110,53 @@ namespace VideoHostingApp
         /// </summary>
         /// <param name="sender">Источник события.</param>
         /// <param name="e">Аргументы события, содержащие индекс колонки с ошибкой.</param>
+
+        private void AddExistingTerritoriesToComboBoxItems()
+        {
+            foreach (DataRow row in videoHostingDBDataSet.Договор.Rows)
+            {
+                if (row.IsNull("территория_действия"))
+                    continue;
+
+                var territory = Convert.ToString(row["территория_действия"]);
+                if (!dataGridViewTextBoxColumn4.Items.Contains(territory))
+                    dataGridViewTextBoxColumn4.Items.Add(territory);
+            }
+        }
+
+        private void EnsureContractTerritoriesAreValid()
+        {
+            var allowedCountries = new HashSet<string>(GetCountryItems(), StringComparer.Ordinal);
+
+            foreach (DataRow row in videoHostingDBDataSet.Договор.Rows)
+            {
+                if (row.RowState == DataRowState.Deleted)
+                    continue;
+
+                var territory = row.IsNull("территория_действия") ? string.Empty : Convert.ToString(row["территория_действия"]);
+                if (!allowedCountries.Contains(territory))
+                    throw new InvalidOperationException("В поле 'территория_действия' должна быть выбрана одна страна из списка. Исправьте старые значения вроде 'Весь мир' или 'США, Россия'.");
+            }
+        }
+
+        private static IEnumerable<string> GetCountryItems()
+        {
+            return new[]
+            {
+                "Argentina", "Australia", "Austria", "Belarus", "Belgium", "Brazil", "Bulgaria", "Canada",
+                "Chile", "China", "Colombia", "Croatia", "Czech Republic", "Denmark", "Egypt", "Finland",
+                "France", "Germany", "Greece", "Hungary", "India", "Ireland", "Israel", "Italy", "Japan",
+                "Kazakhstan", "Kenya", "Malaysia", "Mexico", "Netherlands", "New Zealand", "Nigeria", "Norway",
+                "Pakistan", "Peru", "Philippines", "Poland", "Portugal", "Romania", "Russia", "Saudi Arabia",
+                "Serbia", "Singapore", "Slovakia", "Slovenia", "South Africa", "South Korea", "Spain", "Sweden",
+                "Switzerland", "Thailand", "Turkey", "UAE", "Ukraine", "United Kingdom", "USA", "Uzbekistan",
+                "Venezuela", "Vietnam"
+            };
+        }
         private void ContractDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             e.ThrowException = false;
-            GridErrorHelper.ShowComboBoxError("Выберите тип лицензии из списка.");
+            GridErrorHelper.ShowComboBoxError("Выберите значение из списка. Для территории действия укажите одну страну.");
         }
 
         #endregion

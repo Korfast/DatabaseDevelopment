@@ -112,9 +112,23 @@ namespace VideoHostingApp
             return rightHolderDataGridView.Columns[rightHolderDataGridView.CurrentCell.ColumnIndex].DataPropertyName;
         }
 
+        private static string EscapeFilterValue(string value)
+        {
+            return value
+                .Replace("'", "''")
+                .Replace("[", "[[]")
+                .Replace("%", "[%]")
+                .Replace("*", "[*]");
+        }
+
+        private static string BuildContainsFilter(string fieldName, string value)
+        {
+            return "Convert([" + fieldName + "], 'System.String') LIKE '%" + EscapeFilterValue(value) + "%'";
+        }
+
         /// <summary>
         /// Обработчик кнопки "Поиск". Ищет первую запись, у которой значение выбранной
-        /// колонки совпадает со значением, введённым в toolStripTextBoxFind.
+        /// колонки содержит текст, введённый в toolStripTextBoxFind.
         /// </summary>
         private void ToolStripButtonFind_Click(object sender, EventArgs e)
         {
@@ -124,10 +138,25 @@ namespace VideoHostingApp
                 return;
             }
 
-            int indexPos;
+            int indexPos = -1;
             try
             {
-                indexPos = rightHolderBindingSource.Find(GetSelectedFieldName(), toolStripTextBoxFind.Text);
+                string fieldName = GetSelectedFieldName();
+                string searchText = toolStripTextBoxFind.Text;
+
+                for (int i = 0; i < rightHolderBindingSource.Count; i++)
+                {
+                    DataRowView rowView = rightHolderBindingSource[i] as DataRowView;
+                    if (rowView == null)
+                        continue;
+
+                    string fieldValue = Convert.ToString(rowView[fieldName]);
+                    if (fieldValue.IndexOf(searchText, StringComparison.CurrentCultureIgnoreCase) >= 0)
+                    {
+                        indexPos = i;
+                        break;
+                    }
+                }
             }
             catch (Exception err)
             {
@@ -160,7 +189,7 @@ namespace VideoHostingApp
                 {
                     try
                     {
-                        rightHolderBindingSource.Filter = GetSelectedFieldName() + "='" + toolStripTextBoxFind.Text + "'";
+                        rightHolderBindingSource.Filter = BuildContainsFilter(GetSelectedFieldName(), toolStripTextBoxFind.Text);
                     }
                     catch (Exception err)
                     {

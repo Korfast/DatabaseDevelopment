@@ -23,6 +23,7 @@ namespace VideoHostingApp
             this.contractBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contractTableAdapter = new VideoHostingApp.VideoHostingDBDataSetTableAdapters.ДоговорTableAdapter();
             this.rightHolderTableAdapter = new VideoHostingApp.VideoHostingDBDataSetTableAdapters.ПравообладательTableAdapter();
+            this.contentTableAdapter = new VideoHostingApp.VideoHostingDBDataSetTableAdapters.КонтентTableAdapter();
             this.licenseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.licenseTableAdapter = new VideoHostingApp.VideoHostingDBDataSetTableAdapters.ЛицензияTableAdapter();
             this.tableAdapterManager = new VideoHostingApp.VideoHostingDBDataSetTableAdapters.TableAdapterManager();
@@ -48,7 +49,7 @@ namespace VideoHostingApp
             this.rightHolderNameCaptionLabel = new System.Windows.Forms.Label();
             this.rightHolderNameLabel = new System.Windows.Forms.Label();
             this.territoryLabel = new System.Windows.Forms.Label();
-            this.territoryTextBox = new System.Windows.Forms.TextBox();
+            this.territoryComboBox = new System.Windows.Forms.ComboBox();
             this.licenseTypeLabel = new System.Windows.Forms.Label();
             this.licenseTypeComboBox = new System.Windows.Forms.ComboBox();
             this.scanPathLabel = new System.Windows.Forms.Label();
@@ -94,6 +95,10 @@ namespace VideoHostingApp
             //
             this.rightHolderTableAdapter.ClearBeforeFill = true;
             //
+            // contentTableAdapter
+            //
+            this.contentTableAdapter.ClearBeforeFill = true;
+            //
             // licenseBindingSource
             //
             this.licenseBindingSource.DataMember = "FK_Лицензия_Договор";
@@ -110,7 +115,7 @@ namespace VideoHostingApp
             this.tableAdapterManager.ДоговорTableAdapter = this.contractTableAdapter;
             this.tableAdapterManager.ЖанрTableAdapter = null;
             this.tableAdapterManager.Контент_ЖанрTableAdapter = null;
-            this.tableAdapterManager.КонтентTableAdapter = null;
+            this.tableAdapterManager.КонтентTableAdapter = this.contentTableAdapter;
             this.tableAdapterManager.ЛицензияTableAdapter = this.licenseTableAdapter;
             this.tableAdapterManager.Медиа_файлTableAdapter = null;
             this.tableAdapterManager.ПравообладательTableAdapter = this.rightHolderTableAdapter;
@@ -319,12 +324,14 @@ namespace VideoHostingApp
             this.territoryLabel.Size = new System.Drawing.Size(112, 13);
             this.territoryLabel.Text = "Территория действия:";
             //
-            // territoryTextBox
+            // territoryComboBox
             //
-            this.territoryTextBox.Location = new System.Drawing.Point(160, 139);
-            this.territoryTextBox.Name = "territoryTextBox";
-            this.territoryTextBox.Size = new System.Drawing.Size(280, 20);
-            this.territoryTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contractBindingSource, "территория_действия", true));
+            this.territoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.territoryComboBox.FormattingEnabled = true;
+            this.territoryComboBox.Location = new System.Drawing.Point(160, 139);
+            this.territoryComboBox.Name = "territoryComboBox";
+            this.territoryComboBox.Size = new System.Drawing.Size(280, 21);
+            this.territoryComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contractBindingSource, "территория_действия", true));
             //
             // licenseTypeLabel
             //
@@ -504,7 +511,7 @@ namespace VideoHostingApp
             this.Controls.Add(this.scanPathLabel);
             this.Controls.Add(this.licenseTypeComboBox);
             this.Controls.Add(this.licenseTypeLabel);
-            this.Controls.Add(this.territoryTextBox);
+            this.Controls.Add(this.territoryComboBox);
             this.Controls.Add(this.territoryLabel);
             this.Controls.Add(this.rightHolderNameLabel);
             this.Controls.Add(this.rightHolderNameCaptionLabel);
@@ -541,6 +548,7 @@ namespace VideoHostingApp
         private System.Windows.Forms.BindingSource contractBindingSource;
         private VideoHostingDBDataSetTableAdapters.ДоговорTableAdapter contractTableAdapter;
         private VideoHostingDBDataSetTableAdapters.ПравообладательTableAdapter rightHolderTableAdapter;
+        private VideoHostingDBDataSetTableAdapters.КонтентTableAdapter contentTableAdapter;
         private System.Windows.Forms.BindingSource licenseBindingSource;
         private VideoHostingDBDataSetTableAdapters.ЛицензияTableAdapter licenseTableAdapter;
         private VideoHostingDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
@@ -566,7 +574,7 @@ namespace VideoHostingApp
         private System.Windows.Forms.Label rightHolderNameCaptionLabel;
         private System.Windows.Forms.Label rightHolderNameLabel;
         private System.Windows.Forms.Label territoryLabel;
-        private System.Windows.Forms.TextBox territoryTextBox;
+        private System.Windows.Forms.ComboBox territoryComboBox;
         private System.Windows.Forms.Label licenseTypeLabel;
         private System.Windows.Forms.ComboBox licenseTypeComboBox;
         private System.Windows.Forms.Label scanPathLabel;

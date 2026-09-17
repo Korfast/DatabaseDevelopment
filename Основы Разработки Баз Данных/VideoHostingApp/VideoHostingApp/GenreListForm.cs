@@ -68,7 +68,14 @@ namespace VideoHostingApp
         /// <param name="e">Аргументы события.</param>
         private void GenreListForm_Load(object sender, EventArgs e)
         {
-            this.genreTableAdapter.Fill(this.videoHostingDBDataSet.Жанр);
+            try
+            {
+                this.genreTableAdapter.Fill(this.videoHostingDBDataSet.Жанр);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при загрузке жанров:\n" + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #endregion
@@ -84,9 +91,17 @@ namespace VideoHostingApp
         /// <param name="e">Аргументы события.</param>
         private void GenreBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.genreBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.videoHostingDBDataSet);
+            try
+            {
+                this.Validate();
+                this.genreBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.videoHostingDBDataSet);
+                MessageBox.Show("Данные успешно сохранены.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при сохранении жанров:\n" + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #endregion

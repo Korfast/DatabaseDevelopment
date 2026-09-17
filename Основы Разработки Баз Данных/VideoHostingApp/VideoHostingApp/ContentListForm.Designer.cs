@@ -255,7 +255,6 @@
             this.contentBindingNavigator.Size = new System.Drawing.Size(884, 25);
             this.contentBindingNavigator.TabIndex = 0;
             this.contentBindingNavigator.Text = "bindingNavigator1";
-            this.contentBindingNavigator.Click += new System.EventHandler(this.ContentBindingNavigatorSaveItem_Click);
             // 
             // bindingNavigatorAddNewItem
             // 

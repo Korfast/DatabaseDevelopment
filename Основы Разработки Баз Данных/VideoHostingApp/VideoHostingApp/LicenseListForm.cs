@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -57,6 +57,7 @@ namespace VideoHostingApp
 
             // Подписка на событие ошибок DataGridView
             licenseDataGridView.DataError += LicenseDataGridView_DataError;
+            licenseBindingSource.CurrentChanged += LicenseBindingSource_CurrentChanged;
         }
 
         #endregion
@@ -70,6 +71,11 @@ namespace VideoHostingApp
         private void LicenseListForm_Load(object sender, EventArgs e)
         {
             this.licenseTableAdapter.Fill(this.videoHostingDBDataSet.Лицензия);
+
+            if (this.videoHostingDBDataSet.Лицензия.Columns.Contains("дата_добавления"))
+                this.videoHostingDBDataSet.Лицензия.Columns["дата_добавления"].DefaultValue = DateTime.Today;
+
+            PrepareCurrentLicenseDefaults();
         }
 
         #endregion
@@ -85,6 +91,7 @@ namespace VideoHostingApp
             try
             {
                 this.Validate();
+                PrepareCurrentLicenseDefaults();
                 this.licenseBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.videoHostingDBDataSet);
                 MessageBox.Show("Данные успешно сохранены.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -102,6 +109,28 @@ namespace VideoHostingApp
         /// <summary>
         /// Обработчик ошибок DataGridView. Подавляет стандартное окно ошибки и показывает понятное сообщение.
         /// </summary>
+        private void LicenseBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            PrepareCurrentLicenseDefaults();
+        }
+
+        private void PrepareCurrentLicenseDefaults()
+        {
+            var current = licenseBindingSource.Current as DataRowView;
+            if (current == null || current.Row.RowState != DataRowState.Added)
+                return;
+
+            SetDefaultIfEmpty(current.Row, "дата_начала", DateTime.Today);
+            SetDefaultIfEmpty(current.Row, "дата_окончания", DateTime.Today.AddYears(1));
+            SetDefaultIfEmpty(current.Row, "статус", true);
+            SetDefaultIfEmpty(current.Row, "дата_добавления", DateTime.Today);
+        }
+
+        private static void SetDefaultIfEmpty(DataRow row, string columnName, object value)
+        {
+            if (row.Table.Columns.Contains(columnName) && row.IsNull(columnName))
+                row[columnName] = value;
+        }
         private void LicenseDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             e.ThrowException = false;
