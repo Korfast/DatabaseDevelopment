@@ -124,6 +124,18 @@ namespace VideoHostingApp
             MediaFileListForm.Instance.ShowForm();
         }
 
+
+        /// <summary>
+        /// Обработчик нажатия пункта меню "Контент и жанры".
+        /// Открывает форму для работы со связью M:M между контентом и жанрами.
+        /// </summary>
+        /// <param name="sender">Источник события.</param>
+        /// <param name="e">Аргументы события.</param>
+        private void ContentGenresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ContentGenresForm.Instance.ShowForm();
+        }
+
         #endregion
 
         #region Обработчики кнопок панели инструментов
@@ -136,6 +148,26 @@ namespace VideoHostingApp
 
         #region Сохранение положения окна и подтверждение закрытия
 
+
+        /// <summary>
+        /// Восстанавливает положение и размер главного окна из пользовательских настроек.
+        /// </summary>
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            Size savedSize = Properties.Settings.Default.MainFormSize;
+            Point savedLocation = Properties.Settings.Default.MainFormLocation;
+
+            if (savedSize.Width > 0 && savedSize.Height > 0)
+                Size = savedSize;
+
+            if (savedLocation != Point.Empty)
+            {
+                StartPosition = FormStartPosition.Manual;
+                Location = savedLocation;
+            }
+
+            WindowState = Properties.Settings.Default.MainFormWindowState;
+        }
         /// <summary>
         /// Обработчик события закрытия формы (FormClosed).
         /// Сохраняет пользовательские настройки (положение окна и другие параметры)
@@ -145,6 +177,21 @@ namespace VideoHostingApp
         /// <param name="e">Аргументы события.</param>
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            if (WindowState == FormWindowState.Normal)
+            {
+                Properties.Settings.Default.MainFormLocation = Location;
+                Properties.Settings.Default.MainFormSize = Size;
+            }
+            else
+            {
+                Properties.Settings.Default.MainFormLocation = RestoreBounds.Location;
+                Properties.Settings.Default.MainFormSize = RestoreBounds.Size;
+            }
+
+            Properties.Settings.Default.MainFormWindowState = WindowState == FormWindowState.Minimized
+                ? FormWindowState.Normal
+                : WindowState;
+
             Properties.Settings.Default.Save();
         }
 
@@ -170,3 +217,4 @@ namespace VideoHostingApp
         #endregion
     }
 }
+

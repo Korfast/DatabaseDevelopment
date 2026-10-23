@@ -416,3 +416,10 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Repository-local temporary work files
+.tmp_build/
+.vs_backup_*/
+report_*_20*/
+*.zip
+

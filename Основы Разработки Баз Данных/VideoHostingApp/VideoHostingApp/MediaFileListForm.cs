@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -70,7 +70,14 @@ namespace VideoHostingApp
         /// <param name="e">Аргументы события.</param>
         private void MediaFileListForm_Load(object sender, EventArgs e)
         {
-            this.mediaFileTableAdapter.Fill(this.videoHostingDBDataSet.Медиа_файл);
+            try
+            {
+                this.mediaFileTableAdapter.Fill(this.videoHostingDBDataSet.Медиа_файл);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при загрузке данных:\n" + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #endregion

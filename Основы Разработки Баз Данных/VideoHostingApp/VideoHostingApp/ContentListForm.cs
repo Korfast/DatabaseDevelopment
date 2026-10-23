@@ -17,6 +17,10 @@ namespace VideoHostingApp
     /// </summary>
     public partial class ContentListForm : Form
     {
+        private readonly VideoHostingDBDataSetTableAdapters.ЛицензияTableAdapter licensesTableAdapter =
+            new VideoHostingDBDataSetTableAdapters.ЛицензияTableAdapter();
+        private readonly VideoHostingDBDataSetTableAdapters.Медиа_файлTableAdapter mediaFilesTableAdapter =
+            new VideoHostingDBDataSetTableAdapters.Медиа_файлTableAdapter();
         #region Singleton
 
         private static ContentListForm _instance;
@@ -33,6 +37,30 @@ namespace VideoHostingApp
                     _instance = new ContentListForm();
                 return _instance;
             }
+        }
+
+        private void ConfigureChildNavigator(BindingNavigator navigator, ToolStripButton saveButton,
+            BindingSource source, string saveText, EventHandler saveHandler)
+        {
+            navigator.BindingSource = source;
+            navigator.Dock = DockStyle.Top;
+            navigator.GripStyle = ToolStripGripStyle.Hidden;
+            saveButton.Text = saveText;
+            saveButton.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            saveButton.Click += saveHandler;
+            navigator.Items.Add(saveButton);
+        }
+
+        private void ConfigureChildGrid(DataGridView grid, BindingSource source,
+            DataGridViewRowEventHandler defaultsHandler, DataGridViewDataErrorEventHandler errorHandler)
+        {
+            grid.Dock = DockStyle.Fill;
+            grid.AutoGenerateColumns = true;
+            grid.AllowUserToAddRows = true;
+            grid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            grid.DataSource = source;
+            grid.DefaultValuesNeeded += defaultsHandler;
+            grid.DataError += errorHandler;
         }
 
         /// <summary>
@@ -72,6 +100,76 @@ namespace VideoHostingApp
                 "Короткометражный фильм",
                 "Трейлер"
             });
+            if (LicenseManager.UsageMode != LicenseUsageMode.Designtime)
+            {
+                contentLicensesBindingSource.DataSource = contentBindingSource;
+                contentLicensesBindingSource.DataMember = "FK_Лицензия_Контент";
+                mediaFilesBindingSource.DataSource = contentBindingSource;
+                mediaFilesBindingSource.DataMember = "FK_Контент_Медиа_файл";
+            }
+        }
+
+        private void ContentLicensesDefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
+        {
+            SetContentForeignKey(e.Row);
+        }
+
+        private void MediaFilesDefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
+        {
+            SetContentForeignKey(e.Row);
+        }
+
+        private void SetContentForeignKey(DataGridViewRow row)
+        {
+            DataRowView parent = contentBindingSource.Current as DataRowView;
+            if (parent != null && row.Cells["ID_контента"] != null)
+                row.Cells["ID_контента"].Value = parent["ID_контента"];
+        }
+
+        private void ContentLicensesDataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+            MessageBox.Show("Не удалось изменить лицензию. Проверьте обязательные поля и даты.\n" +
+                (e.Exception == null ? string.Empty : e.Exception.Message), "Ошибка лицензии",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void MediaFilesDataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+            MessageBox.Show("Не удалось изменить медиафайл. Проверьте обязательные поля и числовой размер.\n" +
+                (e.Exception == null ? string.Empty : e.Exception.Message), "Ошибка медиафайла",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void ContentLicensesSaveButton_Click(object sender, EventArgs e)
+        {
+            SaveRelatedContentData(contentLicensesBindingSource, licensesTableAdapter, "лицензий");
+        }
+
+        private void MediaFilesSaveButton_Click(object sender, EventArgs e)
+        {
+            SaveRelatedContentData(mediaFilesBindingSource, mediaFilesTableAdapter, "медиафайлов");
+        }
+
+        private void SaveRelatedContentData(BindingSource source, object adapter, string caption)
+        {
+            try
+            {
+                Validate();
+                source.EndEdit();
+                if (adapter is VideoHostingDBDataSetTableAdapters.ЛицензияTableAdapter)
+                    ((VideoHostingDBDataSetTableAdapters.ЛицензияTableAdapter)adapter).Update(videoHostingDBDataSet.Лицензия);
+                else
+                    ((VideoHostingDBDataSetTableAdapters.Медиа_файлTableAdapter)adapter).Update(videoHostingDBDataSet.Медиа_файл);
+                MessageBox.Show("Изменения " + caption + " сохранены.", "Информация",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при сохранении " + caption + ":\n" + ex.Message,
+                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #endregion
@@ -86,7 +184,16 @@ namespace VideoHostingApp
         /// <param name="e">Аргументы события.</param>
         private void ContentListForm_Load(object sender, EventArgs e)
         {
-            this.contentTableAdapter.Fill(this.videoHostingDBDataSet.Контент);
+            try
+            {
+                this.contentTableAdapter.Fill(this.videoHostingDBDataSet.Контент);
+                this.licensesTableAdapter.Fill(this.videoHostingDBDataSet.Лицензия);
+                this.mediaFilesTableAdapter.Fill(this.videoHostingDBDataSet.Медиа_файл);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при загрузке данных:\n" + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #endregion
