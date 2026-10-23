@@ -1,0 +1,20 @@
+USE master;
+GO
+
+SELECT @@VERSION AS SqlServerVersion;
+
+SELECT name, database_id, create_date
+FROM sys.databases
+ORDER BY name;
+GO
+
+USE AdventureWorks2017;
+GO
+
+SELECT DB_NAME() AS CurrentDatabase;
+
+SELECT TABLE_SCHEMA, TABLE_NAME
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_TYPE = 'BASE TABLE'
+ORDER BY TABLE_SCHEMA, TABLE_NAME;
+GO

@@ -39,6 +39,7 @@
             this.licensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contractsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mediaFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contentGenresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
@@ -71,7 +72,9 @@
             this.genresToolStripMenuItem,
             this.licensesToolStripMenuItem,
             this.contractsToolStripMenuItem,
-            this.mediaFilesToolStripMenuItem});
+            this.mediaFilesToolStripMenuItem,
+            this.contentGenresToolStripMenuItem,
+            });
             this.referencesToolStripMenuItem.Name = "referencesToolStripMenuItem";
             this.referencesToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.referencesToolStripMenuItem.Text = "Справочники";
@@ -133,6 +136,14 @@
             this.mediaFilesToolStripMenuItem.Text = "Медиафайлы";
             this.mediaFilesToolStripMenuItem.Click += new System.EventHandler(this.MediaFilesToolStripMenuItem_Click);
             // 
+            // 
+            // contentGenresToolStripMenuItem
+            // 
+            this.contentGenresToolStripMenuItem.Name = "contentGenresToolStripMenuItem";
+            this.contentGenresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.contentGenresToolStripMenuItem.Text = "Контент и жанры";
+            this.contentGenresToolStripMenuItem.Click += new System.EventHandler(this.ContentGenresToolStripMenuItem_Click);
+            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
@@ -149,6 +160,9 @@
             this.MainMenuStrip = this.menuStripMain;
             this.Name = "MainForm";
             this.Text = "Управление контентом видеохостинга";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStripMain.ResumeLayout(false);
             this.menuStripMain.PerformLayout();
             this.ResumeLayout(false);
@@ -168,8 +182,11 @@
         private System.Windows.Forms.ToolStripMenuItem licensesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contractsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mediaFilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contentGenresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
+
+
 

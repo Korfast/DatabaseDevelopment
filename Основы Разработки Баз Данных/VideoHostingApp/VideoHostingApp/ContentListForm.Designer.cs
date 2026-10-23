@@ -44,6 +44,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContentListForm));
             this.videoHostingDBDataSet = new VideoHostingApp.VideoHostingDBDataSet();
             this.contentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contentLicensesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mediaFilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contentTableAdapter = new VideoHostingApp.VideoHostingDBDataSetTableAdapters.КонтентTableAdapter();
             this.tableAdapterManager = new VideoHostingApp.VideoHostingDBDataSetTableAdapters.TableAdapterManager();
             this.contentBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
@@ -73,6 +75,17 @@
             this.contentTypeComboBox = new System.Windows.Forms.ComboBox();
             this.openPhotoButton = new System.Windows.Forms.Button();
             this.photoOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.relatedContentTabControl = new System.Windows.Forms.TabControl();
+            this.contentLicensesTabPage = new System.Windows.Forms.TabPage();
+            this.contentLicensesDataGridView = new System.Windows.Forms.DataGridView();
+            this.contentLicensesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.contentLicensesSaveButton = new System.Windows.Forms.ToolStripButton();
+            this.mediaFilesTabPage = new System.Windows.Forms.TabPage();
+            this.mediaFilesDataGridView = new System.Windows.Forms.DataGridView();
+            this.mediaFilesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.mediaFilesSaveButton = new System.Windows.Forms.ToolStripButton();
+            this.contentMainSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.contentMainPanel = new System.Windows.Forms.Panel();
             contentIdLabel = new System.Windows.Forms.Label();
             titleLabel = new System.Windows.Forms.Label();
             originalTitleLabel = new System.Windows.Forms.Label();
@@ -87,9 +100,25 @@
             posterLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.videoHostingDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contentLicensesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mediaFilesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contentBindingNavigator)).BeginInit();
             this.contentBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.posterPictureBox)).BeginInit();
+            this.relatedContentTabControl.SuspendLayout();
+            this.contentLicensesTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.contentLicensesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contentLicensesBindingNavigator)).BeginInit();
+            this.contentLicensesBindingNavigator.SuspendLayout();
+            this.mediaFilesTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mediaFilesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mediaFilesBindingNavigator)).BeginInit();
+            this.mediaFilesBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.contentMainSplitContainer)).BeginInit();
+            this.contentMainSplitContainer.Panel1.SuspendLayout();
+            this.contentMainSplitContainer.Panel2.SuspendLayout();
+            this.contentMainSplitContainer.SuspendLayout();
+            this.contentMainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // contentIdLabel
@@ -255,7 +284,6 @@
             this.contentBindingNavigator.Size = new System.Drawing.Size(884, 25);
             this.contentBindingNavigator.TabIndex = 0;
             this.contentBindingNavigator.Text = "bindingNavigator1";
-            this.contentBindingNavigator.Click += new System.EventHandler(this.ContentBindingNavigatorSaveItem_Click);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -475,46 +503,212 @@
             this.photoOpenFileDialog.RestoreDirectory = true;
             this.photoOpenFileDialog.Title = "\"Выберите файл постера\"";
             // 
+            // relatedContentTabControl
+            // 
+            this.relatedContentTabControl.Controls.Add(this.contentLicensesTabPage);
+            this.relatedContentTabControl.Controls.Add(this.mediaFilesTabPage);
+            this.relatedContentTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.relatedContentTabControl.Location = new System.Drawing.Point(0, 0);
+            this.relatedContentTabControl.Name = "relatedContentTabControl";
+            this.relatedContentTabControl.SelectedIndex = 0;
+            this.relatedContentTabControl.Size = new System.Drawing.Size(884, 198);
+            this.relatedContentTabControl.TabIndex = 30;
+            // 
+            // contentLicensesTabPage
+            // 
+            this.contentLicensesTabPage.Controls.Add(this.contentLicensesDataGridView);
+            this.contentLicensesTabPage.Controls.Add(this.contentLicensesBindingNavigator);
+            this.contentLicensesTabPage.Location = new System.Drawing.Point(4, 22);
+            this.contentLicensesTabPage.Name = "contentLicensesTabPage";
+            this.contentLicensesTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.contentLicensesTabPage.Size = new System.Drawing.Size(876, 172);
+            this.contentLicensesTabPage.TabIndex = 0;
+            this.contentLicensesTabPage.Text = "Лицензии";
+            // 
+            // contentLicensesDataGridView
+            // 
+            // Связанные поля лицензий формируются из текущего источника данных.
+            // Автогенерация необходима: в дизайнере фиксированные колонки не заданы.
+            this.contentLicensesDataGridView.AutoGenerateColumns = true;
+            this.contentLicensesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.contentLicensesDataGridView.DataSource = this.contentLicensesBindingSource;
+            this.contentLicensesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contentLicensesDataGridView.Location = new System.Drawing.Point(3, 28);
+            this.contentLicensesDataGridView.Name = "contentLicensesDataGridView";
+            this.contentLicensesDataGridView.Size = new System.Drawing.Size(870, 141);
+            this.contentLicensesDataGridView.TabIndex = 0;
+            this.contentLicensesDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.ContentLicensesDataError);
+            this.contentLicensesDataGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.ContentLicensesDefaultValuesNeeded);
+            // 
+            // contentLicensesBindingNavigator
+            // 
+            this.contentLicensesBindingNavigator.AddNewItem = null;
+            this.contentLicensesBindingNavigator.BindingSource = this.contentLicensesBindingSource;
+            this.contentLicensesBindingNavigator.CountItem = null;
+            this.contentLicensesBindingNavigator.DeleteItem = null;
+            this.contentLicensesBindingNavigator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.contentLicensesBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contentLicensesSaveButton});
+            this.contentLicensesBindingNavigator.Location = new System.Drawing.Point(3, 3);
+            this.contentLicensesBindingNavigator.MoveFirstItem = null;
+            this.contentLicensesBindingNavigator.MoveLastItem = null;
+            this.contentLicensesBindingNavigator.MoveNextItem = null;
+            this.contentLicensesBindingNavigator.MovePreviousItem = null;
+            this.contentLicensesBindingNavigator.Name = "contentLicensesBindingNavigator";
+            this.contentLicensesBindingNavigator.PositionItem = null;
+            this.contentLicensesBindingNavigator.Size = new System.Drawing.Size(870, 25);
+            this.contentLicensesBindingNavigator.TabIndex = 1;
+            // 
+            // contentLicensesSaveButton
+            // 
+            this.contentLicensesSaveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.contentLicensesSaveButton.Name = "contentLicensesSaveButton";
+            this.contentLicensesSaveButton.Size = new System.Drawing.Size(126, 22);
+            this.contentLicensesSaveButton.Text = "Сохранить лицензии";
+            this.contentLicensesSaveButton.Click += new System.EventHandler(this.ContentLicensesSaveButton_Click);
+            // 
+            // mediaFilesTabPage
+            // 
+            this.mediaFilesTabPage.Controls.Add(this.mediaFilesDataGridView);
+            this.mediaFilesTabPage.Controls.Add(this.mediaFilesBindingNavigator);
+            this.mediaFilesTabPage.Location = new System.Drawing.Point(4, 22);
+            this.mediaFilesTabPage.Name = "mediaFilesTabPage";
+            this.mediaFilesTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.mediaFilesTabPage.Size = new System.Drawing.Size(847, 284);
+            this.mediaFilesTabPage.TabIndex = 1;
+            this.mediaFilesTabPage.Text = "Медиафайлы";
+            // 
+            // mediaFilesDataGridView
+            // 
+            // Связанные поля медиафайлов формируются из текущего источника данных.
+            this.mediaFilesDataGridView.AutoGenerateColumns = true;
+            this.mediaFilesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.mediaFilesDataGridView.DataSource = this.mediaFilesBindingSource;
+            this.mediaFilesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mediaFilesDataGridView.Location = new System.Drawing.Point(3, 28);
+            this.mediaFilesDataGridView.Name = "mediaFilesDataGridView";
+            this.mediaFilesDataGridView.Size = new System.Drawing.Size(841, 253);
+            this.mediaFilesDataGridView.TabIndex = 0;
+            this.mediaFilesDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.MediaFilesDataError);
+            this.mediaFilesDataGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.MediaFilesDefaultValuesNeeded);
+            // 
+            // mediaFilesBindingNavigator
+            // 
+            this.mediaFilesBindingNavigator.AddNewItem = null;
+            this.mediaFilesBindingNavigator.BindingSource = this.mediaFilesBindingSource;
+            this.mediaFilesBindingNavigator.CountItem = null;
+            this.mediaFilesBindingNavigator.DeleteItem = null;
+            this.mediaFilesBindingNavigator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.mediaFilesBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mediaFilesSaveButton});
+            this.mediaFilesBindingNavigator.Location = new System.Drawing.Point(3, 3);
+            this.mediaFilesBindingNavigator.MoveFirstItem = null;
+            this.mediaFilesBindingNavigator.MoveLastItem = null;
+            this.mediaFilesBindingNavigator.MoveNextItem = null;
+            this.mediaFilesBindingNavigator.MovePreviousItem = null;
+            this.mediaFilesBindingNavigator.Name = "mediaFilesBindingNavigator";
+            this.mediaFilesBindingNavigator.PositionItem = null;
+            this.mediaFilesBindingNavigator.Size = new System.Drawing.Size(841, 25);
+            this.mediaFilesBindingNavigator.TabIndex = 1;
+            // 
+            // mediaFilesSaveButton
+            // 
+            this.mediaFilesSaveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.mediaFilesSaveButton.Name = "mediaFilesSaveButton";
+            this.mediaFilesSaveButton.Size = new System.Drawing.Size(145, 22);
+            this.mediaFilesSaveButton.Text = "Сохранить медиафайлы";
+            this.mediaFilesSaveButton.Click += new System.EventHandler(this.MediaFilesSaveButton_Click);
+            // 
+            // contentMainSplitContainer
+            // 
+            this.contentMainSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contentMainSplitContainer.Location = new System.Drawing.Point(0, 25);
+            this.contentMainSplitContainer.Name = "contentMainSplitContainer";
+            this.contentMainSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // contentMainSplitContainer.Panel1
+            // 
+            this.contentMainSplitContainer.Panel1.Controls.Add(this.contentMainPanel);
+            // 
+            // contentMainSplitContainer.Panel2
+            // 
+            this.contentMainSplitContainer.Panel2.Controls.Add(this.relatedContentTabControl);
+            this.contentMainSplitContainer.Size = new System.Drawing.Size(884, 695);
+            this.contentMainSplitContainer.SplitterDistance = 493;
+            this.contentMainSplitContainer.TabIndex = 31;
+            // 
+            // contentMainPanel
+            // 
+            this.contentMainPanel.AutoScroll = true;
+            this.contentMainPanel.Controls.Add(this.openPhotoButton);
+            this.contentMainPanel.Controls.Add(this.contentTypeComboBox);
+            this.contentMainPanel.Controls.Add(this.ageRatingComboBox);
+            this.contentMainPanel.Controls.Add(contentIdLabel);
+            this.contentMainPanel.Controls.Add(this.contentIdTextBox);
+            this.contentMainPanel.Controls.Add(titleLabel);
+            this.contentMainPanel.Controls.Add(this.titleTextBox);
+            this.contentMainPanel.Controls.Add(originalTitleLabel);
+            this.contentMainPanel.Controls.Add(this.originalTitleTextBox);
+            this.contentMainPanel.Controls.Add(releaseYearLabel);
+            this.contentMainPanel.Controls.Add(this.releaseYearTextBox);
+            this.contentMainPanel.Controls.Add(countryLabel);
+            this.contentMainPanel.Controls.Add(this.countryTextBox);
+            this.contentMainPanel.Controls.Add(directorLabel);
+            this.contentMainPanel.Controls.Add(this.directorTextBox);
+            this.contentMainPanel.Controls.Add(descriptionLabel);
+            this.contentMainPanel.Controls.Add(this.descriptionTextBox);
+            this.contentMainPanel.Controls.Add(ageRatingLabel);
+            this.contentMainPanel.Controls.Add(contentTypeLabel);
+            this.contentMainPanel.Controls.Add(durationLabel);
+            this.contentMainPanel.Controls.Add(this.durationMaskedTextBox);
+            this.contentMainPanel.Controls.Add(addedDateLabel);
+            this.contentMainPanel.Controls.Add(this.addedDateTimePicker);
+            this.contentMainPanel.Controls.Add(posterLabel);
+            this.contentMainPanel.Controls.Add(this.posterPictureBox);
+            this.contentMainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contentMainPanel.Location = new System.Drawing.Point(0, 0);
+            this.contentMainPanel.Name = "contentMainPanel";
+            this.contentMainPanel.Size = new System.Drawing.Size(884, 493);
+            this.contentMainPanel.TabIndex = 0;
+            // 
             // ContentListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 561);
-            this.Controls.Add(this.openPhotoButton);
-            this.Controls.Add(this.contentTypeComboBox);
-            this.Controls.Add(this.ageRatingComboBox);
-            this.Controls.Add(contentIdLabel);
-            this.Controls.Add(this.contentIdTextBox);
-            this.Controls.Add(titleLabel);
-            this.Controls.Add(this.titleTextBox);
-            this.Controls.Add(originalTitleLabel);
-            this.Controls.Add(this.originalTitleTextBox);
-            this.Controls.Add(releaseYearLabel);
-            this.Controls.Add(this.releaseYearTextBox);
-            this.Controls.Add(countryLabel);
-            this.Controls.Add(this.countryTextBox);
-            this.Controls.Add(directorLabel);
-            this.Controls.Add(this.directorTextBox);
-            this.Controls.Add(descriptionLabel);
-            this.Controls.Add(this.descriptionTextBox);
-            this.Controls.Add(ageRatingLabel);
-            this.Controls.Add(contentTypeLabel);
-            this.Controls.Add(durationLabel);
-            this.Controls.Add(this.durationMaskedTextBox);
-            this.Controls.Add(addedDateLabel);
-            this.Controls.Add(this.addedDateTimePicker);
-            this.Controls.Add(posterLabel);
-            this.Controls.Add(this.posterPictureBox);
+            this.ClientSize = new System.Drawing.Size(884, 720);
+            this.Controls.Add(this.contentMainSplitContainer);
             this.Controls.Add(this.contentBindingNavigator);
+            this.MinimumSize = new System.Drawing.Size(640, 480);
             this.Name = "ContentListForm";
             this.Text = "ContentListForm";
             this.Load += new System.EventHandler(this.ContentListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.videoHostingDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contentLicensesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mediaFilesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contentBindingNavigator)).EndInit();
             this.contentBindingNavigator.ResumeLayout(false);
             this.contentBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.posterPictureBox)).EndInit();
+            this.relatedContentTabControl.ResumeLayout(false);
+            this.contentLicensesTabPage.ResumeLayout(false);
+            this.contentLicensesTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.contentLicensesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contentLicensesBindingNavigator)).EndInit();
+            this.contentLicensesBindingNavigator.ResumeLayout(false);
+            this.contentLicensesBindingNavigator.PerformLayout();
+            this.mediaFilesTabPage.ResumeLayout(false);
+            this.mediaFilesTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mediaFilesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mediaFilesBindingNavigator)).EndInit();
+            this.mediaFilesBindingNavigator.ResumeLayout(false);
+            this.mediaFilesBindingNavigator.PerformLayout();
+            this.contentMainSplitContainer.Panel1.ResumeLayout(false);
+            this.contentMainSplitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.contentMainSplitContainer)).EndInit();
+            this.contentMainSplitContainer.ResumeLayout(false);
+            this.contentMainPanel.ResumeLayout(false);
+            this.contentMainPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -524,6 +718,8 @@
 
         private VideoHostingDBDataSet videoHostingDBDataSet;
         private System.Windows.Forms.BindingSource contentBindingSource;
+        private System.Windows.Forms.BindingSource contentLicensesBindingSource;
+        private System.Windows.Forms.BindingSource mediaFilesBindingSource;
         private VideoHostingDBDataSetTableAdapters.КонтентTableAdapter contentTableAdapter;
         private VideoHostingDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator contentBindingNavigator;
@@ -553,5 +749,16 @@
         private System.Windows.Forms.ComboBox contentTypeComboBox;
         private System.Windows.Forms.Button openPhotoButton;
         private System.Windows.Forms.OpenFileDialog photoOpenFileDialog;
+        private System.Windows.Forms.TabControl relatedContentTabControl;
+        private System.Windows.Forms.TabPage contentLicensesTabPage;
+        private System.Windows.Forms.TabPage mediaFilesTabPage;
+        private System.Windows.Forms.BindingNavigator contentLicensesBindingNavigator;
+        private System.Windows.Forms.BindingNavigator mediaFilesBindingNavigator;
+        private System.Windows.Forms.DataGridView contentLicensesDataGridView;
+        private System.Windows.Forms.DataGridView mediaFilesDataGridView;
+        private System.Windows.Forms.ToolStripButton contentLicensesSaveButton;
+        private System.Windows.Forms.ToolStripButton mediaFilesSaveButton;
+        private System.Windows.Forms.SplitContainer contentMainSplitContainer;
+        private System.Windows.Forms.Panel contentMainPanel;
     }
 }

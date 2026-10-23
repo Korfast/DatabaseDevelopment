@@ -17,6 +17,12 @@ namespace VideoHostingApp
     /// </summary>
     public partial class RightHolderListForm : Form
     {
+        private readonly VideoHostingDBDataSetTableAdapters.ДоговорTableAdapter contractsTableAdapter =
+            new VideoHostingDBDataSetTableAdapters.ДоговорTableAdapter();
+        private DataGridView contractsDataGridView;
+        private BindingNavigator contractsBindingNavigator;
+        private Panel contractsPanel;
+        private ToolStripButton contractsSaveButton;
         #region Singleton
 
         private static RightHolderListForm _instance;
@@ -55,10 +61,107 @@ namespace VideoHostingApp
         public RightHolderListForm()
         {
             InitializeComponent();
+            InitializeRelatedContractsPanel();
+        }
+
+        /// <summary>
+        /// Показывает договоры выбранного правообладателя прямо в справочнике.
+        /// Дочерний источник использует связь DataSet, поэтому список автоматически
+        /// меняется при переходе между правообладателями.
+        /// </summary>
+        private void InitializeRelatedContractsPanel()
+        {
+            if (LicenseManager.UsageMode == LicenseUsageMode.Designtime)
+                return;
+            contractsBindingSource.DataSource = rightHolderBindingSource;
+            contractsBindingSource.DataMember = "FK_Договор_Правообладатель";
+        }
+
+        private void ContractsDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
+        {
+            DataRowView parent = rightHolderBindingSource.Current as DataRowView;
+            if (parent != null && parent.Row.Table.Columns.Contains("ID_правообладателя"))
+                e.Row.Cells["ID_правообладателя"].Value = parent["ID_правообладателя"];
+        }
+
+        private void ContractsDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+            MessageBox.Show("Не удалось изменить договор. Проверьте обязательные поля и формат даты.\n" +
+                (e.Exception == null ? string.Empty : e.Exception.Message),
+                "Ошибка договора", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void ContractsSaveButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Validate();
+                contractsBindingSource.EndEdit();
+                contractsTableAdapter.Update(videoHostingDBDataSet.Договор);
+                MessageBox.Show("Договоры успешно сохранены.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при сохранении договоров:\n" + ex.Message,
+                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #endregion
 
+
+        #region Поиск
+
+        private void RightHolderSearchButton_Click(object sender, EventArgs e)
+        {
+            ApplyRightHolderSearch();
+        }
+
+        private void RightHolderResetSearchButton_Click(object sender, EventArgs e)
+        {
+            rightHolderSearchTextBox.Clear();
+            rightHolderBindingSource.RemoveFilter();
+        }
+
+        private void RightHolderSearchTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ApplyRightHolderSearch();
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void ApplyRightHolderSearch()
+        {
+            string searchText = rightHolderSearchTextBox.Text.Trim();
+
+            if (string.IsNullOrEmpty(searchText))
+            {
+                rightHolderBindingSource.RemoveFilter();
+                return;
+            }
+
+            string escapedText = searchText
+                .Replace("'", "''")
+                .Replace("[", "[[]")
+                .Replace("%", "[%]")
+                .Replace("*", "[*]");
+
+            try
+            {
+                rightHolderBindingSource.Filter = string.Format("Convert([наименование], 'System.String') LIKE '%{0}%'", escapedText);
+            }
+            catch (Exception ex)
+            {
+                rightHolderBindingSource.RemoveFilter();
+                MessageBox.Show("Ошибка поиска правообладателя:\n" + ex.Message,
+                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        #endregion
         #region Загрузка данных
 
         /// <summary>
@@ -69,7 +172,15 @@ namespace VideoHostingApp
         /// <param name="e">Аргументы события.</param>
         private void RightHolderListForm_Load(object sender, EventArgs e)
         {
-            this.rightHolderTableAdapter.Fill(this.videoHostingDBDataSet.Правообладатель);
+            try
+            {
+                this.rightHolderTableAdapter.Fill(this.videoHostingDBDataSet.Правообладатель);
+                this.contractsTableAdapter.Fill(this.videoHostingDBDataSet.Договор);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при загрузке данных:\n" + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #endregion

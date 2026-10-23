@@ -1,0 +1,10 @@
+VM/
+*.ova
+*.ovf
+*.vmdk
+*.vdi
+*.vbox
+*.vbox-prev
+*.zip
+*.7z
+*.rar

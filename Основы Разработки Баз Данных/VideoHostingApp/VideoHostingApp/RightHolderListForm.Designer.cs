@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RightHolderListForm));
             this.videoHostingDBDataSet = new VideoHostingApp.VideoHostingDBDataSet();
             this.rightHolderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contractsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rightHolderTableAdapter = new VideoHostingApp.VideoHostingDBDataSetTableAdapters.ПравообладательTableAdapter();
             this.tableAdapterManager = new VideoHostingApp.VideoHostingDBDataSetTableAdapters.TableAdapterManager();
             this.rightHolderBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
@@ -54,11 +55,24 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rightHolderSearchPanel = new System.Windows.Forms.Panel();
+            this.rightHolderSearchLabel = new System.Windows.Forms.Label();
+            this.rightHolderSearchTextBox = new System.Windows.Forms.TextBox();
+            this.rightHolderSearchButton = new System.Windows.Forms.Button();
+            this.rightHolderResetSearchButton = new System.Windows.Forms.Button();
+            this.contractsPanel = new System.Windows.Forms.Panel();
+            this.contractsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.contractsSaveButton = new System.Windows.Forms.ToolStripButton();
+            this.contractsDataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.videoHostingDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rightHolderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rightHolderBindingNavigator)).BeginInit();
             this.rightHolderBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rightHolderDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractsBindingNavigator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractsDataGridView)).BeginInit();
+            this.contractsPanel.SuspendLayout();
+            this.rightHolderSearchPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // videoHostingDBDataSet
@@ -225,10 +239,10 @@
             this.dataGridViewTextBoxColumn6});
             this.rightHolderDataGridView.DataSource = this.rightHolderBindingSource;
             this.rightHolderDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rightHolderDataGridView.Location = new System.Drawing.Point(0, 25);
+            this.rightHolderDataGridView.Location = new System.Drawing.Point(0, 61);
             this.rightHolderDataGridView.Name = "rightHolderDataGridView";
-            this.rightHolderDataGridView.Size = new System.Drawing.Size(684, 386);
-            this.rightHolderDataGridView.TabIndex = 1;
+            this.rightHolderDataGridView.Size = new System.Drawing.Size(684, 350);
+            this.rightHolderDataGridView.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -329,12 +343,90 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "email";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
+            // rightHolderSearchPanel
+            // 
+            this.rightHolderSearchPanel.Controls.Add(this.rightHolderSearchLabel);
+            this.rightHolderSearchPanel.Controls.Add(this.rightHolderSearchTextBox);
+            this.rightHolderSearchPanel.Controls.Add(this.rightHolderSearchButton);
+            this.rightHolderSearchPanel.Controls.Add(this.rightHolderResetSearchButton);
+            this.rightHolderSearchPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rightHolderSearchPanel.Location = new System.Drawing.Point(0, 25);
+            this.rightHolderSearchPanel.Name = "rightHolderSearchPanel";
+            this.rightHolderSearchPanel.Padding = new System.Windows.Forms.Padding(8, 6, 8, 4);
+            this.rightHolderSearchPanel.Size = new System.Drawing.Size(684, 36);
+            this.rightHolderSearchPanel.TabIndex = 1;
+            // 
+            // rightHolderSearchLabel
+            // 
+            this.rightHolderSearchLabel.AutoSize = true;
+            this.rightHolderSearchLabel.Location = new System.Drawing.Point(8, 10);
+            this.rightHolderSearchLabel.Name = "rightHolderSearchLabel";
+            this.rightHolderSearchLabel.Size = new System.Drawing.Size(116, 13);
+            this.rightHolderSearchLabel.TabIndex = 0;
+            this.rightHolderSearchLabel.Text = "Поиск по названию:";
+            // 
+            // rightHolderSearchTextBox
+            // 
+            this.rightHolderSearchTextBox.Location = new System.Drawing.Point(130, 7);
+            this.rightHolderSearchTextBox.Name = "rightHolderSearchTextBox";
+            this.rightHolderSearchTextBox.Size = new System.Drawing.Size(240, 20);
+            this.rightHolderSearchTextBox.TabIndex = 1;
+            this.rightHolderSearchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RightHolderSearchTextBox_KeyDown);
+            // 
+            // rightHolderSearchButton
+            // 
+            this.rightHolderSearchButton.Location = new System.Drawing.Point(380, 5);
+            this.rightHolderSearchButton.Name = "rightHolderSearchButton";
+            this.rightHolderSearchButton.Size = new System.Drawing.Size(75, 23);
+            this.rightHolderSearchButton.TabIndex = 2;
+            this.rightHolderSearchButton.Text = "Найти";
+            this.rightHolderSearchButton.UseVisualStyleBackColor = true;
+            this.rightHolderSearchButton.Click += new System.EventHandler(this.RightHolderSearchButton_Click);
+            // 
+            // rightHolderResetSearchButton
+            // 
+            this.rightHolderResetSearchButton.Location = new System.Drawing.Point(463, 5);
+            this.rightHolderResetSearchButton.Name = "rightHolderResetSearchButton";
+            this.rightHolderResetSearchButton.Size = new System.Drawing.Size(75, 23);
+            this.rightHolderResetSearchButton.TabIndex = 3;
+            this.rightHolderResetSearchButton.Text = "Сброс";
+            this.rightHolderResetSearchButton.UseVisualStyleBackColor = true;
+            this.rightHolderResetSearchButton.Click += new System.EventHandler(this.RightHolderResetSearchButton_Click);
+            // contractsPanel
+            this.contractsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contractsPanel.Controls.Add(this.contractsDataGridView);
+            this.contractsPanel.Controls.Add(this.contractsBindingNavigator);
+            this.contractsPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.contractsPanel.Height = 190;
+            this.contractsPanel.Name = "contractsPanel";
+            this.contractsPanel.Padding = new System.Windows.Forms.Padding(4);
+            // contractsBindingNavigator
+            this.contractsBindingNavigator.BindingSource = this.contractsBindingSource;
+            this.contractsBindingNavigator.Dock = System.Windows.Forms.DockStyle.Top;
+            this.contractsBindingNavigator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.contractsBindingNavigator.Items.Add(this.contractsSaveButton);
+            this.contractsBindingNavigator.Name = "contractsBindingNavigator";
+            // contractsSaveButton
+            this.contractsSaveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.contractsSaveButton.Text = "Сохранить договоры";
+            this.contractsSaveButton.Click += new System.EventHandler(this.ContractsSaveButton_Click);
+            // contractsDataGridView
+            this.contractsDataGridView.AllowUserToAddRows = true;
+            this.contractsDataGridView.AutoGenerateColumns = true;
+            this.contractsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.contractsDataGridView.DataSource = this.contractsBindingSource;
+            this.contractsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contractsDataGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.ContractsDataGridView_DefaultValuesNeeded);
+            this.contractsDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.ContractsDataGridView_DataError);
+            // 
             // RightHolderListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 411);
             this.Controls.Add(this.rightHolderDataGridView);
+            this.Controls.Add(this.contractsPanel);
+            this.Controls.Add(this.rightHolderSearchPanel);
             this.Controls.Add(this.rightHolderBindingNavigator);
             this.Name = "RightHolderListForm";
             this.Text = "Список правообладателей";
@@ -345,6 +437,11 @@
             this.rightHolderBindingNavigator.ResumeLayout(false);
             this.rightHolderBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rightHolderDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractsBindingNavigator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractsDataGridView)).EndInit();
+            this.contractsPanel.ResumeLayout(false);
+            this.rightHolderSearchPanel.ResumeLayout(false);
+            this.rightHolderSearchPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -354,6 +451,7 @@
 
         private VideoHostingDBDataSet videoHostingDBDataSet;
         private System.Windows.Forms.BindingSource rightHolderBindingSource;
+        private System.Windows.Forms.BindingSource contractsBindingSource;
         private VideoHostingDBDataSetTableAdapters.ПравообладательTableAdapter rightHolderTableAdapter;
         private VideoHostingDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator rightHolderBindingNavigator;
@@ -376,5 +474,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.Panel rightHolderSearchPanel;
+        private System.Windows.Forms.Label rightHolderSearchLabel;
+        private System.Windows.Forms.TextBox rightHolderSearchTextBox;
+        private System.Windows.Forms.Button rightHolderSearchButton;
+        private System.Windows.Forms.Button rightHolderResetSearchButton;
     }
 }

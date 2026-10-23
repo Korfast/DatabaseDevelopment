@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +17,12 @@ namespace VideoHostingApp
     /// </summary>
     public partial class ContractListForm : Form
     {
+        private readonly VideoHostingDBDataSetTableAdapters.ЛицензияTableAdapter licensesTableAdapter =
+            new VideoHostingDBDataSetTableAdapters.ЛицензияTableAdapter();
+        private DataGridView licensesDataGridView;
+        private Panel licensesPanel;
+        private BindingNavigator licensesBindingNavigator;
+        private ToolStripButton licensesSaveButton;
         #region Singleton
 
         private static ContractListForm _instance;
@@ -56,6 +62,46 @@ namespace VideoHostingApp
         {
             InitializeComponent();
             contractDataGridView.DataError += ContractDataGridView_DataError;
+            InitializeRelatedLicensesPanel();
+        }
+
+        private void InitializeRelatedLicensesPanel()
+        {
+            if (LicenseManager.UsageMode == LicenseUsageMode.Designtime)
+                return;
+            licensesBindingSource.DataSource = contractBindingSource;
+            licensesBindingSource.DataMember = "FK_Лицензия_Договор";
+        }
+
+        private void LicensesDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
+        {
+            DataRowView parent = contractBindingSource.Current as DataRowView;
+            if (parent != null && e.Row.Cells["номер_договора"] != null)
+                e.Row.Cells["номер_договора"].Value = parent["номер_договора"];
+        }
+
+        private void LicensesDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+            MessageBox.Show("Не удалось изменить лицензию. Проверьте обязательные поля и формат даты.\n" +
+                (e.Exception == null ? string.Empty : e.Exception.Message),
+                "Ошибка лицензии", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void LicensesSaveButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Validate();
+                licensesBindingSource.EndEdit();
+                licensesTableAdapter.Update(videoHostingDBDataSet.Лицензия);
+                MessageBox.Show("Лицензии успешно сохранены.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при сохранении лицензий:\n" + ex.Message,
+                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #endregion
@@ -70,7 +116,15 @@ namespace VideoHostingApp
         /// <param name="e">Аргументы события.</param>
         private void ContractListForm_Load(object sender, EventArgs e)
         {
-            this.contractTableAdapter.Fill(this.videoHostingDBDataSet.Договор);
+            try
+            {
+                this.contractTableAdapter.Fill(this.videoHostingDBDataSet.Договор);
+                this.licensesTableAdapter.Fill(this.videoHostingDBDataSet.Лицензия);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при загрузке данных:\n" + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #endregion

@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContractListForm));
             this.videoHostingDBDataSet = new VideoHostingApp.VideoHostingDBDataSet();
             this.contractBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.licensesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contractTableAdapter = new VideoHostingApp.VideoHostingDBDataSetTableAdapters.ДоговорTableAdapter();
             this.tableAdapterManager = new VideoHostingApp.VideoHostingDBDataSetTableAdapters.TableAdapterManager();
             this.contractBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
@@ -54,11 +55,18 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.licensesPanel = new System.Windows.Forms.Panel();
+            this.licensesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.licensesSaveButton = new System.Windows.Forms.ToolStripButton();
+            this.licensesDataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.videoHostingDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractBindingNavigator)).BeginInit();
             this.contractBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contractDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licensesBindingNavigator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licensesDataGridView)).BeginInit();
+            this.licensesPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // videoHostingDBDataSet
@@ -283,6 +291,32 @@
             this.dataGridViewTextBoxColumn6.DataPropertyName = "ID_правообладателя";
             this.dataGridViewTextBoxColumn6.HeaderText = "ID_правообладателя";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // licensesPanel
+            this.licensesPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.licensesPanel.Controls.Add(this.licensesDataGridView);
+            this.licensesPanel.Controls.Add(this.licensesBindingNavigator);
+            this.licensesPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.licensesPanel.Height = 170;
+            this.licensesPanel.Name = "licensesPanel";
+            this.licensesPanel.Padding = new System.Windows.Forms.Padding(4);
+            // licensesBindingNavigator
+            this.licensesBindingNavigator.BindingSource = this.licensesBindingSource;
+            this.licensesBindingNavigator.Dock = System.Windows.Forms.DockStyle.Top;
+            this.licensesBindingNavigator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.licensesBindingNavigator.Items.Add(this.licensesSaveButton);
+            this.licensesBindingNavigator.Name = "licensesBindingNavigator";
+            // licensesSaveButton
+            this.licensesSaveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.licensesSaveButton.Text = "Сохранить лицензии";
+            this.licensesSaveButton.Click += new System.EventHandler(this.LicensesSaveButton_Click);
+            // licensesDataGridView
+            this.licensesDataGridView.AllowUserToAddRows = true;
+            this.licensesDataGridView.AutoGenerateColumns = true;
+            this.licensesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.licensesDataGridView.DataSource = this.licensesBindingSource;
+            this.licensesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.licensesDataGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.LicensesDataGridView_DefaultValuesNeeded);
+            this.licensesDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.LicensesDataGridView_DataError);
             // 
             // ContractListForm
             // 
@@ -290,6 +324,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 411);
             this.Controls.Add(this.contractDataGridView);
+            this.Controls.Add(this.licensesPanel);
             this.Controls.Add(this.contractBindingNavigator);
             this.Name = "ContractListForm";
             this.Text = "Список договоров";
@@ -300,6 +335,9 @@
             this.contractBindingNavigator.ResumeLayout(false);
             this.contractBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contractDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licensesBindingNavigator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licensesDataGridView)).EndInit();
+            this.licensesPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,6 +347,7 @@
 
         private VideoHostingDBDataSet videoHostingDBDataSet;
         private System.Windows.Forms.BindingSource contractBindingSource;
+        private System.Windows.Forms.BindingSource licensesBindingSource;
         private VideoHostingDBDataSetTableAdapters.ДоговорTableAdapter contractTableAdapter;
         private VideoHostingDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator contractBindingNavigator;

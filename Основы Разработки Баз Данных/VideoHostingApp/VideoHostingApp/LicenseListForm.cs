@@ -57,6 +57,7 @@ namespace VideoHostingApp
 
             // Подписка на событие ошибок DataGridView
             licenseDataGridView.DataError += LicenseDataGridView_DataError;
+            licenseBindingSource.CurrentChanged += LicenseBindingSource_CurrentChanged;
         }
 
         #endregion
@@ -69,11 +70,46 @@ namespace VideoHostingApp
         /// </summary>
         private void LicenseListForm_Load(object sender, EventArgs e)
         {
-            this.licenseTableAdapter.Fill(this.videoHostingDBDataSet.Лицензия);
+            try
+            {
+                this.licenseTableAdapter.Fill(this.videoHostingDBDataSet.Лицензия);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при загрузке данных:\n" + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #endregion
 
+
+        #region Значения по умолчанию
+
+        private void LicenseBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            PrepareCurrentLicenseDefaults();
+        }
+
+        private void PrepareCurrentLicenseDefaults()
+        {
+            DataRowView currentRowView = licenseBindingSource.Current as DataRowView;
+
+            if (currentRowView == null || currentRowView.Row.RowState != DataRowState.Added)
+                return;
+
+            SetDefaultIfEmpty(currentRowView.Row, "дата_начала", DateTime.Today);
+            SetDefaultIfEmpty(currentRowView.Row, "дата_окончания", DateTime.Today.AddYears(1));
+            SetDefaultIfEmpty(currentRowView.Row, "статус", true);
+            SetDefaultIfEmpty(currentRowView.Row, "дата_добавления", DateTime.Today);
+        }
+
+        private static void SetDefaultIfEmpty(DataRow row, string columnName, object value)
+        {
+            if (row.Table.Columns.Contains(columnName) && row.IsNull(columnName))
+                row[columnName] = value;
+        }
+
+        #endregion
         #region Сохранение данных
 
         /// <summary>
@@ -85,6 +121,7 @@ namespace VideoHostingApp
             try
             {
                 this.Validate();
+                PrepareCurrentLicenseDefaults();
                 this.licenseBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.videoHostingDBDataSet);
                 MessageBox.Show("Данные успешно сохранены.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
