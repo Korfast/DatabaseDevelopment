@@ -1,0 +1,253 @@
+<html><head><meta charset="utf-8"><style>body{font-family:"Times New Roman";font-size:12pt;line-height:1.25}h1{text-align:center;font-size:18pt}h2{font-size:14pt;margin-top:18pt}p{margin:3pt 0;white-space:pre-wrap}.formula{font-family:"Courier New";font-size:10.5pt}</style></head><body>
+<h1>ВЫЧИСЛИТЕЛЬНЫЕ МЕТОДЫ</h1>
+<p class='formula'>Подробное решение заданий. Вариант 2</p>
+<p>&nbsp;</p>
+<h2>ЛИСТ 1. ЗАДАЧА 1. ОЦЕНКА ПОГРЕШНОСТЕЙ</h2>
+<p>&nbsp;</p>
+<p class='formula'>Дано:</p>
+<p class='formula'>a = 3.47, Δa = 0.01; b = 3.58, Δb = 0.02; c = 0.184, Δc = 0.004.</p>
+<p>&nbsp;</p>
+<p class='formula'>Формулы варианта 2:</p>
+<p class='formula'>S1 = 3c^2 / sqrt(b - a),     S2 = a^2 sqrt(b) / c^2.</p>
+<p>&nbsp;</p>
+<h2>1. Вычисление S1</h2>
+<p>&nbsp;</p>
+<p class='formula'>b - a = 3.58 - 3.47 = 0.11.</p>
+<p class='formula'>c^2 = 0.184^2 = 0.033856.</p>
+<p class='formula'>sqrt(b - a) = sqrt(0.11) = 0.331662.</p>
+<p>&nbsp;</p>
+<p class='formula'>S1 = 3*0.033856 / 0.331662 = 0.306239.</p>
+<p>&nbsp;</p>
+<p class='formula'>Относительная погрешность:</p>
+<p class='formula'>ΔS1/S1 = (Δa + Δb)/(2(b-a)) + 2Δc/c.</p>
+<p>&nbsp;</p>
+<p class='formula'>ΔS1/S1 = 0.03/(2*0.11) + 2*0.004/0.184</p>
+<p class='formula'>        = 0.136364 + 0.043478 = 0.179842.</p>
+<p>&nbsp;</p>
+<p class='formula'>δS1 = 17.9842%.</p>
+<p class='formula'>Абсолютная погрешность: εS1 = S1*δS1 = 0.306239*0.179842 = 0.055075.</p>
+<p class='formula'>Полный размах: ΔS1 = 2εS1 = 0.110149.</p>
+<p>&nbsp;</p>
+<p class='formula'>Ответ:</p>
+<p class='formula'>S1 = 0.306239 &#177; 0.055075 = 0.306239 &#177; ΔS1/2.</p>
+<p>&nbsp;</p>
+<p class='formula'>Коэффициенты усиления погрешности:</p>
+<p class='formula'>Ka = a/(2(b-a)) = 3.47/0.22 = 15.7727;</p>
+<p class='formula'>Kb = -b/(2(b-a)) = -3.58/0.22 = -16.2727;</p>
+<p class='formula'>Kc = 2.</p>
+<p>&nbsp;</p>
+<h2>2. Вычисление S2</h2>
+<p>&nbsp;</p>
+<p class='formula'>a^2 = 3.47^2 = 12.0409;</p>
+<p class='formula'>sqrt(b) = sqrt(3.58) = 1.89209;</p>
+<p class='formula'>c^2 = 0.033856.</p>
+<p>&nbsp;</p>
+<p class='formula'>S2 = 12.0409*1.89209/0.033856 = 672.922139.</p>
+<p>&nbsp;</p>
+<p class='formula'>Относительная погрешность:</p>
+<p class='formula'>ΔS2/S2 = 2Δa/a + (1/2)Δb/b + 2Δc/c.</p>
+<p>&nbsp;</p>
+<p class='formula'>ΔS2/S2 = 2*0.01/3.47 + 0.5*0.02/3.58 + 2*0.004/0.184</p>
+<p class='formula'>        = 0.005764 + 0.002793 + 0.043478 = 0.052035.</p>
+<p>&nbsp;</p>
+<p class='formula'>δS2 = 5.2035%.</p>
+<p class='formula'>Абсолютная погрешность: εS2 = 672.922139*0.052035 = 35.0157.</p>
+<p class='formula'>Полный размах: ΔS2 = 2εS2 = 70.0313.</p>
+<p>&nbsp;</p>
+<p class='formula'>Ответ:</p>
+<p class='formula'>S2 = 672.922139 &#177; 35.0157 = 672.922139 &#177; ΔS2/2.</p>
+<p>&nbsp;</p>
+<p class='formula'>Коэффициенты усиления погрешности:</p>
+<p class='formula'>Ka = 2;     Kb = 1/2;     Kc = -2.</p>
+<p>&nbsp;</p>
+<h2>ЛИСТ 1. ЗАДАЧА 2. КВАДРАТНОЕ УРАВНЕНИЕ</h2>
+<p>&nbsp;</p>
+<p class='formula'>x^2 + 6*10^6*x - 300 = 0.</p>
+<p>&nbsp;</p>
+<p class='formula'>a = 1, b = 6000000, c = -300.</p>
+<p>&nbsp;</p>
+<p class='formula'>D = b^2 - 4ac = 6000000^2 + 1200 = 36000000001200.</p>
+<p class='formula'>sqrt(D) = 6000000.0001.</p>
+<p>&nbsp;</p>
+<p class='formula'>По формуле:</p>
+<p class='formula'>x1,2 = (-b &#177; sqrt(D))/(2a).</p>
+<p>&nbsp;</p>
+<p class='formula'>x1 = (-6000000 - 6000000.0001)/2 = -6000000.00005.</p>
+<p>&nbsp;</p>
+<p class='formula'>Для малого корня используем устойчивую формулу, чтобы избежать потери значащих цифр:</p>
+<p class='formula'>x2 = -2c/(b + sqrt(D)) = 600/(6000000 + 6000000.0001)</p>
+<p class='formula'>   = 0.00005.</p>
+<p>&nbsp;</p>
+<p class='formula'>Ответ:</p>
+<p class='formula'>x1 = -6000000.00005,     x2 = 0.00005.</p>
+<p>&nbsp;</p>
+<h2>ЛИСТ 1. ЗАДАЧА 3. РЯД ТЕЙЛОРА</h2>
+<p>&nbsp;</p>
+<p class='formula'>Найти sin(6.33), взяв два члена ряда.</p>
+<p>&nbsp;</p>
+<p class='formula'>Ряд Маклорена:</p>
+<p class='formula'>sin(x) = x - x^3/3! + x^5/5! - ...</p>
+<p>&nbsp;</p>
+<p class='formula'>Для вычислительных методов сначала уменьшим аргумент:</p>
+<p class='formula'>t = 6.33 - 2*pi = 0.046814693.</p>
+<p>&nbsp;</p>
+<p class='formula'>Так как sin(6.33) = sin(t), используем два члена:</p>
+<p class='formula'>sin(t) ≈ t - t^3/6.</p>
+<p>&nbsp;</p>
+<p class='formula'>sin(6.33) ≈ 0.046814693 - 0.046814693^3/6</p>
+<p class='formula'>          = 0.046797593.</p>
+<p>&nbsp;</p>
+<p class='formula'>Ответ: sin(6.33) ≈ 0.046797593.</p>
+<p class='formula'>Точное значение примерно 0.046797595.</p>
+<p>&nbsp;</p>
+<p class='formula'>Примечание: если подставлять 6.33 непосредственно в ряд около нуля, получится</p>
+<p class='formula'>6.33 - 6.33^3/6 = -35.94269, что является плохим приближением из-за большого аргумента.</p>
+<p>&nbsp;</p>
+<h2>ЛИСТ 2. ЗАДАЧА 1. ЧИСЛО ОБУСЛОВЛЕННОСТИ</h2>
+<p>&nbsp;</p>
+<p class='formula'>Даны: kappa1 = 3145; kappa2 = 9*10^8; kappa3 = 10^15.</p>
+<p>&nbsp;</p>
+<p class='formula'>Оценка относительной погрешности корня:</p>
+<p class='formula'>|Δx|/|x0| &lt;= kappa*epsilon,</p>
+<p class='formula'>где epsilon — относительная погрешность исходных данных.</p>
+<p>&nbsp;</p>
+<p class='formula'>Следовательно:</p>
+<p class='formula'>|Δx| &lt;= kappa*epsilon*|x0|.</p>
+<p>&nbsp;</p>
+<p class='formula'>При записи x = x0 &#177; Δx/2 полный размах равен:</p>
+<p class='formula'>Δx = 2*kappa*epsilon*|x0|.</p>
+<p>&nbsp;</p>
+<p class='formula'>Для любого корня x0:</p>
+<p class='formula'>x(kappa1) = x0 &#177; 3145*epsilon*|x0|;</p>
+<p class='formula'>x(kappa2) = x0 &#177; 9*10^8*epsilon*|x0|;</p>
+<p class='formula'>x(kappa3) = x0 &#177; 10^15*epsilon*|x0|.</p>
+<p>&nbsp;</p>
+<p class='formula'>Чем больше число обусловленности, тем сильнее ошибка исходных данных влияет на решение.</p>
+<p class='formula'>В условии не задано конкретное epsilon, поэтому численную ширину интервала</p>
+<p class='formula'>можно получить только после задания исходной относительной погрешности.</p>
+<p>&nbsp;</p>
+<h2>ЛИСТ 2. ЗАДАЧА 2. НОРМЫ ВЕКТОРА</h2>
+<p>&nbsp;</p>
+<p class='formula'>u = (18, 20, -21, 23)^T,    |Δui| = 1.</p>
+<p class='formula'>Для наихудшей оценки Δu = (1,1,1,1)^T.</p>
+<p>&nbsp;</p>
+<p class='formula'>Норма 1:</p>
+<p class='formula'>||u||1 = 18 + 20 + 21 + 23 = 82.</p>
+<p class='formula'>||Δu||1 = 4.</p>
+<p class='formula'>δ1 = ||Δu||1/||u||1 = 4/82 = 0.0487805 = 4.878%.</p>
+<p>&nbsp;</p>
+<p class='formula'>Евклидова норма:</p>
+<p class='formula'>||u||2 = sqrt(18^2 + 20^2 + 21^2 + 23^2)</p>
+<p class='formula'>       = sqrt(1694) = 41.15823.</p>
+<p class='formula'>||Δu||2 = sqrt(4) = 2.</p>
+<p class='formula'>δ2 = 2/sqrt(1694) = 0.04859295 = 4.859%.</p>
+<p>&nbsp;</p>
+<p class='formula'>Максимальная норма:</p>
+<p class='formula'>||u||infinity = max(18,20,21,23) = 23.</p>
+<p class='formula'>||Δu||infinity = 1.</p>
+<p class='formula'>δinfinity = 1/23 = 0.0434783 = 4.348%.</p>
+<p>&nbsp;</p>
+<h2>ЛИСТ 2. ЗАДАЧА 3. ОБРАТНАЯ МАТРИЦА И ОБУСЛОВЛЕННОСТЬ</h2>
+<p>&nbsp;</p>
+<p class='formula'>A = [ 35   12  -15</p>
+<p class='formula'>      11   25   15</p>
+<p class='formula'>     -10   17   42 ].</p>
+<p>&nbsp;</p>
+<p class='formula'>Определитель:</p>
+<p class='formula'>det(A) = 35*(25*42 - 15*17)</p>
+<p class='formula'>       - 12*(11*42 - 15*(-10))</p>
+<p class='formula'>       - 15*(11*17 - 25*(-10))</p>
+<p class='formula'>       = 35*795 - 12*612 - 15*437</p>
+<p class='formula'>       = 13926.</p>
+<p>&nbsp;</p>
+<p class='formula'>Матрица алгебраических дополнений:</p>
+<p class='formula'>C = [ 795  -612   437</p>
+<p class='formula'>     -759  1320  -715</p>
+<p class='formula'>      555  -690   743 ].</p>
+<p>&nbsp;</p>
+<p class='formula'>Поэтому:</p>
+<p class='formula'>A^(-1) = 1/13926 * [ 795  -759   555</p>
+<p class='formula'>                      -612  1320  -690</p>
+<p class='formula'>                       437  -715   743 ].</p>
+<p>&nbsp;</p>
+<p class='formula'>В десятичной форме:</p>
+<p class='formula'>A^(-1) = [ 0.057087  -0.054502   0.039854</p>
+<p class='formula'>           -0.043947   0.094787  -0.049548</p>
+<p class='formula'>            0.031380  -0.051343   0.053353 ].</p>
+<p>&nbsp;</p>
+<p class='formula'>Норма по столбцам:</p>
+<p class='formula'>||A||1 = max(35+11+10, 12+25+17, 15+15+42) = 72.</p>
+<p>&nbsp;</p>
+<p class='formula'>||A^(-1)||1 = max(1844,2794,1988)/13926 = 2794/13926 = 0.200632.</p>
+<p>&nbsp;</p>
+<p class='formula'>cond1(A) = ||A||1*||A^(-1)||1</p>
+<p class='formula'>          = 72*2794/13926 = 14.4455.</p>
+<p>&nbsp;</p>
+<p class='formula'>Норма по строкам:</p>
+<p class='formula'>||A||infinity = max(35+12+15, 11+25+15, 10+17+42) = 69.</p>
+<p>&nbsp;</p>
+<p class='formula'>||A^(-1)||infinity = max(2109,2622,1895)/13926</p>
+<p class='formula'>                    = 2622/13926 = 0.188281.</p>
+<p>&nbsp;</p>
+<p class='formula'>condinfinity(A) = 69*2622/13926 = 12.9914.</p>
+<p>&nbsp;</p>
+<p class='formula'>Ответ:</p>
+<p class='formula'>cond1(A) = 14.4455,     condinfinity(A) = 12.9914.</p>
+<p>&nbsp;</p>
+<h2>ЛИСТ 2. ЗАДАЧА 4. ТРИ ИТЕРАЦИИ МЕТОДА ПРОСТЫХ ИТЕРАЦИЙ</h2>
+<p>&nbsp;</p>
+<p class='formula'>Система:</p>
+<p class='formula'>35x1 + 12x2 - 15x3 = 30;</p>
+<p class='formula'>11x1 + 25x2 + 15x3 = -22;</p>
+<p class='formula'>-10x1 + 17x2 + 42x3 = 12.</p>
+<p>&nbsp;</p>
+<p class='formula'>Выразим неизвестные:</p>
+<p class='formula'>x1 = (30 - 12x2 + 15x3)/35;</p>
+<p class='formula'>x2 = (-22 - 11x1 - 15x3)/25;</p>
+<p class='formula'>x3 = (12 + 10x1 - 17x2)/42.</p>
+<p>&nbsp;</p>
+<p class='formula'>Начальное приближение: x^(0) = (0,0,0)^T.</p>
+<p>&nbsp;</p>
+<p class='formula'>Первая итерация:</p>
+<p class='formula'>x1^(1) = 30/35 = 0.8571429;</p>
+<p class='formula'>x2^(1) = -22/25 = -0.8800000;</p>
+<p class='formula'>x3^(1) = 12/42 = 0.2857143.</p>
+<p>&nbsp;</p>
+<p class='formula'>x^(1) = (0.8571429, -0.8800000, 0.2857143)^T.</p>
+<p>&nbsp;</p>
+<p class='formula'>Вторая итерация:</p>
+<p class='formula'>x1^(2) = [30 - 12*(-0.88) + 15*0.2857143]/35</p>
+<p class='formula'>        = 44.845714/35 = 1.2813061;</p>
+<p>&nbsp;</p>
+<p class='formula'>x2^(2) = [-22 - 11*0.8571429 - 15*0.2857143]/25</p>
+<p class='formula'>        = -35.714286/25 = -1.4285714;</p>
+<p>&nbsp;</p>
+<p class='formula'>x3^(2) = [12 + 10*0.8571429 - 17*(-0.88)]/42</p>
+<p class='formula'>        = 35.531429/42 = 0.8459864.</p>
+<p>&nbsp;</p>
+<p class='formula'>x^(2) = (1.2813061, -1.4285714, 0.8459864)^T.</p>
+<p>&nbsp;</p>
+<p class='formula'>Третья итерация:</p>
+<p class='formula'>x1^(3) = [30 - 12*(-1.4285714) + 15*0.8459864]/35</p>
+<p class='formula'>        = 59.832653/35 = 1.7095044;</p>
+<p>&nbsp;</p>
+<p class='formula'>x2^(3) = [-22 - 11*1.2813061 - 15*0.8459864]/25</p>
+<p class='formula'>        = -48.784163/25 = -1.9513665;</p>
+<p>&nbsp;</p>
+<p class='formula'>x3^(3) = [12 + 10*1.2813061 - 17*(-1.4285714)]/42</p>
+<p class='formula'>        = 49.098775/42 = 1.1690185.</p>
+<p>&nbsp;</p>
+<p class='formula'>x^(3) = (1.7095044, -1.9513665, 1.1690185)^T.</p>
+<p>&nbsp;</p>
+<p class='formula'>Точное решение для контроля:</p>
+<p class='formula'>x = A^(-1)B, B = (30,-22,12)^T.</p>
+<p>&nbsp;</p>
+<p class='formula'>x = 1/13926 * (47208, -45680, 37756)^T.</p>
+<p>&nbsp;</p>
+<p class='formula'>x = (3.3899181, -3.2801953, 2.7111877)^T.</p>
+<p>&nbsp;</p>
+<p class='formula'>Трёх итераций недостаточно для получения точного решения. Кроме того,</p>
+<p class='formula'>во второй строке нет строгого диагонального преобладания:</p>
+<p class='formula'>|25| &lt; |11| + |15| = 26.</p>
+<p class='formula'>Поэтому метод простых итераций может сходиться медленно.</p>
+</body></html>
