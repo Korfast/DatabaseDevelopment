@@ -136,6 +136,14 @@ namespace VideoHostingApp
             ContentGenresForm.Instance.ShowForm();
         }
 
+        /// <summary>
+        /// Открывает форму выполнения параметрических запросов ЛР4.
+        /// </summary>
+        private void SqlQueriesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SqlQueriesForm.Instance.ShowForm();
+        }
+
         #endregion
 
         #region Обработчики кнопок панели инструментов
