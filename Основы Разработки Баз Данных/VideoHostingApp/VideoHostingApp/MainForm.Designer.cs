@@ -40,12 +40,13 @@
             this.contractsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mediaFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contentGenresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sqlQueriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
-            // 
+            //
             // menuStripMain
-            // 
+            //
             this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.referencesToolStripMenuItem,
@@ -55,9 +56,9 @@
             this.menuStripMain.Size = new System.Drawing.Size(884, 24);
             this.menuStripMain.TabIndex = 0;
             this.menuStripMain.Text = "menuStrip1";
-            // 
+            //
             // fileToolStripMenuItem
-            // 
+            //
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -74,6 +75,7 @@
             this.contractsToolStripMenuItem,
             this.mediaFilesToolStripMenuItem,
             this.contentGenresToolStripMenuItem,
+            this.sqlQueriesToolStripMenuItem,
             });
             this.referencesToolStripMenuItem.Name = "referencesToolStripMenuItem";
             this.referencesToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
@@ -143,6 +145,13 @@
             this.contentGenresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.contentGenresToolStripMenuItem.Text = "Контент и жанры";
             this.contentGenresToolStripMenuItem.Click += new System.EventHandler(this.ContentGenresToolStripMenuItem_Click);
+            //
+            // sqlQueriesToolStripMenuItem
+            //
+            this.sqlQueriesToolStripMenuItem.Name = "sqlQueriesToolStripMenuItem";
+            this.sqlQueriesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sqlQueriesToolStripMenuItem.Text = "SQL-запросы";
+            this.sqlQueriesToolStripMenuItem.Click += new System.EventHandler(this.SqlQueriesToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -183,6 +192,7 @@
         private System.Windows.Forms.ToolStripMenuItem contractsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mediaFilesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contentGenresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sqlQueriesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
